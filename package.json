@@ -1,0 +1,12 @@
+{
+  "name": "soulslide",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "sync:claude": "node scripts/sync-claude-skill.mjs",
+    "font-audit": "node .agents/skills/soulslide/scripts/slide-font-audit.mjs .agents/skills/soulslide/assets/templates",
+    "font-audit:claude": "node .claude/skills/soulslide/scripts/slide-font-audit.mjs .claude/skills/soulslide/assets/templates",
+    "check": "npm run font-audit && npm run font-audit:claude && node .agents/skills/soulslide/scripts/slide-font-audit.mjs examples"
+  }
+}

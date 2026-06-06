@@ -1,0 +1,3 @@
+display_name: SoulSlide
+short_description: Create editorial HTML slides with reusable 16:9 templates.
+default_prompt: Create a SoulSlide-style 16:9 HTML presentation slide using the design system, a suitable template, and validation workflow.
