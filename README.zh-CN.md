@@ -66,8 +66,6 @@ skill 内置脱敏 golden 样张。agent 改写模板时，应把这些样张作
 └── examples/                          # 本地示例输出
 ```
 
-Codex 目录是源副本。先修改 `.agents/skills/soulslide/`，再同步到 Claude 目录。
-
 ## 安装
 
 克隆或下载本仓库，然后安装你需要的 provider 目录。
@@ -87,23 +85,6 @@ cp -R .claude/skills/soulslide ~/.claude/skills/soulslide
 ```
 
 如果希望 Codex 和 Claude 都使用同一套 slide 风格，可以两边都安装。
-
-## 本地开发
-
-```bash
-npm run check
-```
-
-这个命令会对 Codex 模板、Claude 模板和 examples 运行字号审计。
-
-修改 Codex skill 源副本后：
-
-```bash
-npm run sync:claude
-npm run check
-```
-
-如果改动影响模板或 CSS 的视觉效果，提交前至少人工检查一张 16:9 截图。
 
 ## 内置参考
 

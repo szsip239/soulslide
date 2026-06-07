@@ -66,8 +66,6 @@ Core template families:
 └── examples/                          # local example outputs
 ```
 
-Codex is the source copy. Edit `.agents/skills/soulslide/` first, then sync the Claude directory.
-
 ## Installation
 
 Clone or download this repository, then install the provider directory you need.
@@ -87,23 +85,6 @@ cp -R .claude/skills/soulslide ~/.claude/skills/soulslide
 ```
 
 Install both if you want the same slide style available in both agents.
-
-## Local Development
-
-```bash
-npm run check
-```
-
-This runs the font audit on Codex templates, Claude templates, and examples.
-
-After editing the Codex skill copy:
-
-```bash
-npm run sync:claude
-npm run check
-```
-
-For visible template or CSS changes, inspect at least one 16:9 screenshot manually before committing.
 
 ## Included Guidance
 
