@@ -19,6 +19,43 @@ Use SoulSlide when you want an AI coding agent to:
 
 SoulSlide is not a generic PPT theme. It is a compact production grammar for HTML slides that should look like they came from the same deck family.
 
+## Best Prompting Pattern
+
+For best results, ask the agent to plan the deck before it writes HTML.
+
+```text
+Use SoulSlide. First create a page-by-page outline and recommended layout plan. Do not write HTML yet.
+
+Audience:
+Presentation goal:
+Total pages or time:
+Tone:
+Materials I already have:
+Assets I can share:
+Must-include points:
+Must-avoid points:
+
+Return a table with: page number, one-sentence thesis, recommended SoulSlide template, content blocks, visual asset need, interaction need, open questions.
+```
+
+After you approve the outline:
+
+```text
+Use SoulSlide to build pages [range] from the approved outline.
+Follow the recommended template for each page.
+Keep one thesis per page.
+Use supplied assets where available.
+Generate required visuals if the template needs them and no safe asset is supplied.
+Validate each page with a 16:9 screenshot.
+```
+
+For customer alignment, agree on this table before production:
+
+| Page | Thesis | Recommended template | Content blocks | Visual asset | Interaction | Open question |
+|---|---|---|---|---|---|---|
+| 01 | What the audience should remember | `cover.html` | title, subtitle, speaker/event | optional background | none | confirm title |
+| 02 | One claim, comparison, process, or proof point | template name | 3-5 blocks max | supplied/generated/not needed | none/clicker | missing data |
+
 ## Template Gallery
 
 The skill includes desensitized golden samples. These are the visual target for agents when adapting templates.
@@ -52,6 +89,7 @@ Core template families:
 │   │   ├── templates/*.html           # reusable slide templates
 │   │   └── golden/*.png               # desensitized reference screenshots
 │   ├── references/
+│   │   ├── briefing.md               # prompt and customer brief patterns
 │   │   ├── design-system.md           # visual language and typography rules
 │   │   ├── layout-patterns.md         # template catalog
 │   │   ├── template-decision-tree.md  # layout selection rules
@@ -89,6 +127,7 @@ Install both if you want the same slide style available in both agents.
 ## Included Guidance
 
 - `references/design-system.md` — typography, palette, spacing, and anti-patterns
+- `references/briefing.md` — prompt patterns and page-by-page customer brief structure
 - `references/layout-patterns.md` — categorized template grammar
 - `references/template-decision-tree.md` — direct template selection rules
 - `references/template-coverage-notes.md` — high-flavor patterns not yet promoted to core templates

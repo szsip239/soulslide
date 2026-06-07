@@ -10,12 +10,13 @@ SoulSlide creates editorial HTML slides: projector-first, warm paper palette, st
 ## Core Workflow
 
 1. Identify the deliverable: a single slide, a deck section, a cover, a closing page, or a style audit.
-2. Read `references/design-system.md` before visual work.
-3. Pick the closest layout using `references/template-decision-tree.md`; copy or adapt the matching file from `assets/templates/`. If the request does not fit any leaf cleanly, check `references/template-coverage-notes.md` before inventing a new structure.
-4. If the selected template has required or useful bitmap assets, read `references/visual-assets.md`. Codex must call `image2` or the active image generation tool for missing required visuals instead of leaving final text placeholders.
-5. Link `assets/soulslide.css` or copy its relevant variables/components into the target project.
-6. Write content for one clear idea per slide. Preserve hierarchy: page title > module title > body > source/metadata.
-7. Apply `references/quality-gate.md`, then run `scripts/slide-font-audit.mjs` on changed slides. Use a 16:9 browser screenshot to verify no overflow, clipped text, broken images, or overlapping elements.
+2. For a deck, section, or unclear request, read `references/briefing.md` and produce a page-by-page outline with recommended templates before writing HTML.
+3. Read `references/design-system.md` before visual work.
+4. Pick the closest layout using `references/template-decision-tree.md`; copy or adapt the matching file from `assets/templates/`. If the request does not fit any leaf cleanly, check `references/template-coverage-notes.md` before inventing a new structure.
+5. If the selected template has required or useful bitmap assets, read `references/visual-assets.md`. Codex must call `image2` or the active image generation tool for missing required visuals instead of leaving final text placeholders.
+6. Link `assets/soulslide.css` or copy its relevant variables/components into the target project.
+7. Write content for one clear idea per slide. Preserve hierarchy: page title > module title > body > source/metadata.
+8. Apply `references/quality-gate.md`, then run `scripts/slide-font-audit.mjs` on changed slides. Use a 16:9 browser screenshot to verify no overflow, clipped text, broken images, or overlapping elements.
 
 ## Template Selection
 
