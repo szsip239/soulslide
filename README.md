@@ -1,5 +1,7 @@
 # soulslide
 
+[English](README.md) | [简体中文](README.zh-CN.md)
+
 ![SoulSlide hero](assets/readme/hero.png)
 
 SoulSlide is an agent skill for creating editorial HTML presentation slides with a consistent visual language: projector-first 16:9 composition, warm paper palette, strong Chinese typography, restrained cards, and reusable slide templates for Codex and Claude.
