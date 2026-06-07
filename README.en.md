@@ -6,75 +6,18 @@
 
 SoulSlide is an agent skill for creating editorial HTML presentation slides with a consistent visual language: projector-first 16:9 composition, warm paper palette, strong Chinese typography, restrained cards, and reusable slide templates for Codex and Claude.
 
-## Current Highlights
+## Core Advantages
 
-- Interview-first workflow: the agent should gather audience, goal, materials, assets, constraints, and page count before writing HTML.
-- Navigation/index page: decks start with a reusable status-and-playback shell, including previous, next, home, and fullscreen controls.
-- Cover and closing pages: templates now include generated visual assets and light breathing/floating motion rules for key stage pages.
-- Profile and system-map pages: reusable templates now cover person-as-proof intros and inspectable full-system canvases.
-- Media sequences: clicker-driven image/video playback stays inside the slide stage, with active frame labels and mp4 HTTP serving support.
-- Aesthetic review: high-visibility slides use a one-sentence design read and a composition anchor before layout work.
-- Self-hosted typography: templates load bundled WOFF2 fallbacks from the repository and no longer depend on Google Fonts.
-- Expanded audit: the existing slide audit checks readable type plus remote-font and copy/style guardrails.
-- Golden samples: README images and skill reference screenshots are regenerated from the current templates.
+![SoulSlide core advantages](assets/readme/core-advantages.png)
 
-## What It Is For
-
-Use SoulSlide when you want an AI coding agent to:
-
-- create a new HTML slide or deck section in a recognizable editorial style
-- redesign rough slide content into a clean projector-ready page
-- choose the right layout template before writing CSS
-- improve profile, system-map, cover, closing, and key visual pages with explicit composition anchors
-- keep title, body, quote, citation, and metadata hierarchy consistent
-- generate or request real visual assets where a template requires them
-- show multiple images or videos in sequence using presenter keys, without default enlargement
-- improve cover, closing, and key visual pages with explicit art direction and light motion rules
-- render consistently with bundled local WOFF2 font fallbacks instead of remote font links
-- validate font size, image rhythm, clicker behavior, and 16:9 screenshot quality
-
-SoulSlide is not a generic PPT theme. It is a compact production grammar for HTML slides that should look like they came from the same deck family.
-
-## Best Prompting Pattern
-
-For best results, ask the agent to plan the deck before it writes HTML.
-If your inputs are incomplete, SoulSlide should interview you first, ask for missing details and local file paths, then return the confirmation table before development starts.
-
-```text
-Use SoulSlide. First create a page-by-page outline and recommended layout plan. Do not write HTML yet.
-
-Audience:
-Presentation goal:
-Total pages or time:
-Tone:
-Materials I already have, with file paths if local:
-Assets I can share, with file paths if local:
-Must-include points:
-Must-avoid points:
-
-Return a table with: page number, one-sentence thesis, recommended SoulSlide template, content blocks, visual asset need, interaction need, development status, open questions.
-```
-
-After you approve the outline:
-
-```text
-Use SoulSlide to build pages [range] from the approved outline.
-Generate the navigation/index page first and wait for confirmation before building the rest.
-Follow the recommended template for each page.
-Keep one thesis per page.
-Use supplied assets where available.
-Generate required visuals if the template needs them and no safe asset is supplied.
-Keep previous, next, and fullscreen controls in the deck shell.
-Validate each page with a 16:9 screenshot.
-```
-
-For customer alignment, agree on this table before production:
-
-| Page | Thesis | Recommended template | Content blocks | Visual asset | Interaction | Status | Open question |
-|---|---|---|---|---|---|---|---|
-| 00 | How the audience navigates the deck and sees progress | `navigation.html` | tabs, sections, page cards, player controls | not needed | home/prev/next/fullscreen | generate first | confirm page grouping |
-| 01 | What the audience should remember | `cover.html` | title, subtitle, speaker/event | optional background | none | planned | confirm title |
-| 02 | One claim, comparison, process, or proof point | template name | 3-5 blocks max | supplied/generated/not needed | none/clicker | planned | missing data |
+- Aesthetic-first workflow: decide the slide role, mood, visual center, and composition anchor before writing HTML/CSS.
+- Warm unified style: paper-toned backgrounds, ink text, restrained gold, small red/blue/green accents, and strong Chinese type hierarchy.
+- Complete template set: cover, closing, navigation, profile, system map, media essay, quote, three-column, image grid, metric timeline, workflow, matrix, case, scenario map, and interaction sequence.
+- Visual-asset aware: clear image generation and asset-selection rules for covers, closings, key visual pages, image grids, and media-led pages.
+- Built-in media playback: image/video sequences stay inside the slide, advance with presenter keys, highlight the active frame label, and support mp4 validation through a local Range-capable server.
+- Practical page audit: readable type audit, remote font checks, copy/style guardrails, 16:9 screenshots, and non-16:9 preview checks.
+- Dual-agent packaging: Codex and Claude skill directories share the same templates, fonts, golden samples, and validation workflow.
+- Recoverable and shareable: bundled WOFF2 fonts, desensitized golden examples, local image assets, and MIT licensing for easy reuse.
 
 ## Template Gallery
 
