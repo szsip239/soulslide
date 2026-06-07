@@ -54,6 +54,10 @@ Choose the template by the slide's job, not by the content you happen to have.
     - Use `assets/templates/interaction-sequence.html`.
     - Ensure `window.__seqHandleNav(key)` and `window.__seqBlockNav` are wired.
 
+13. Does the slide feel like a profile intro, live poll, media essay, knowledge constellation, value ledger, or full system map?
+    - Check `references/template-coverage-notes.md`.
+    - Start from the listed fallback template unless the pattern recurs enough to promote.
+
 ## If Two Templates Fit
 
 - Prefer `quote-thesis` when one sentence is the slide.
@@ -72,6 +76,6 @@ Before inventing a new layout, ask:
 - Is it actually a `category-overview` instead of a generic card grid?
 - Is it a `case-study` with proof missing?
 - Is it a `scenario-matrix` that needs more structure?
+- Is it one of the documented high-flavor candidates in `references/template-coverage-notes.md`?
 
 Only create a new template if the answer to all of these is no.
-

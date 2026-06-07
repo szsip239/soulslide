@@ -16,6 +16,18 @@ Default thresholds:
 
 Passing the script is not enough. The visual hierarchy still matters.
 
+## Quality Gate
+
+Before screenshot approval, apply `references/quality-gate.md`.
+
+The gate catches problems the numeric font audit cannot see:
+
+- weak title/body/citation hierarchy
+- generic card-grid or SaaS-like visual drift
+- clipped media, inconsistent image heights, or nested panels
+- decorative effects that do not help the argument
+- reusable examples that accidentally expose private source material
+
 ## Screenshot Check
 
 Use a 16:9 viewport:
@@ -55,4 +67,3 @@ Assets should also return 200. Do not reference `/tmp`, a private home directory
 ## Acceptance Bar
 
 A SoulSlide page is ready when it can be projected, read from the back of the room, navigated with a clicker, and understood as one coherent idea within 10 seconds.
-

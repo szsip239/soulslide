@@ -16,6 +16,8 @@ Installable skill directories:
 - `references/layout-patterns.md` — categorized layout templates for common editorial slide patterns.
 - `references/template-decision-tree.md` — direct rules for choosing the right template.
 - `references/golden-examples.md` — desensitized golden sample mapping for each decision-tree leaf.
+- `references/template-coverage-notes.md` — high-flavor source patterns that are documented but not yet core templates.
+- `references/quality-gate.md` — lightweight audit checklist for style, hierarchy, layout, media, interaction, and shareability.
 - `references/workflow.md` — slide creation and adaptation workflow.
 - `references/validation.md` — font audit and screenshot validation rules.
 - `assets/soulslide.css` — shared design variables and component primitives.
