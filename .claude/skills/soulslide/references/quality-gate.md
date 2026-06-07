@@ -21,6 +21,7 @@ Use this gate after choosing a template and before final screenshot approval. It
 - The slide fits a 16:9 viewport with no scroll.
 - Text does not overflow, clip, or collide with adjacent blocks.
 - Images in a group keep consistent visual height and ratio.
+- Required visual slots contain real supplied or generated assets, not final text placeholders.
 - Cards are not nested inside cards.
 - Rounded corners and shadows stay restrained; repeated panels should feel editorial, not like generic SaaS tiles.
 

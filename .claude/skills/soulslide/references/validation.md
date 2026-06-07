@@ -40,6 +40,7 @@ Check:
 - No text overflow or clipping.
 - No element overlap.
 - Images load and keep a stable ratio.
+- Required visual slots have real supplied or generated assets, not final text placeholders.
 - Cards in one group have consistent image heights.
 - Title is stronger than cards.
 - Body is stronger than citation metadata.

@@ -19,6 +19,8 @@ This catalog distills reusable editorial slide layout grammar. Use it to pick a 
 | Scenario Matrix | `assets/templates/scenario-matrix.html` | Enterprise scene map, sector/function matrix, portfolio overview |
 | Interaction Sequence | `assets/templates/interaction-sequence.html` | Presenter-clicker sequence, gallery, demo reveal |
 
+For required, optional, and intentionally absent image slots, read `references/visual-assets.md`. Do not add bitmap art to structural templates just because the slide feels empty.
+
 ## 1. Cover Stage
 
 Use this for opening pages, chapter dividers, and title-led stage pages.
