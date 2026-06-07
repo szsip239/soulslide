@@ -1,44 +1,116 @@
 # soulslide
 
-SoulSlide is an agent skill for creating editorial HTML presentation slides: projector-first, Chinese/English typographic hierarchy, warm paper palette, and reusable 16:9 layout templates.
+![SoulSlide hero](assets/readme/hero.png)
 
-Installable skill directories:
+SoulSlide is an agent skill for creating editorial HTML presentation slides with a consistent visual language: projector-first 16:9 composition, warm paper palette, strong Chinese typography, restrained cards, and reusable slide templates for Codex and Claude.
+
+## What It Is For
+
+Use SoulSlide when you want an AI coding agent to:
+
+- create a new HTML slide or deck section in a recognizable editorial style
+- redesign rough slide content into a clean projector-ready page
+- choose the right layout template before writing CSS
+- keep title, body, quote, citation, and metadata hierarchy consistent
+- generate or request real visual assets where a template requires them
+- validate font size, image rhythm, clicker behavior, and 16:9 screenshot quality
+
+SoulSlide is not a generic PPT theme. It is a compact production grammar for HTML slides that should look like they came from the same deck family.
+
+## Template Gallery
+
+The skill includes desensitized golden samples. These are the visual target for agents when adapting templates.
+
+![SoulSlide golden sample grid](assets/readme/golden-grid.png)
+
+Core template families:
+
+- `cover.html` — opening page, chapter opener, title-led stage
+- `closing.html` — final page or closing call-to-action
+- `quote-thesis.html` — one strong judgment or turning-point statement
+- `three-column.html` — conditions, benefits, requirements, comparisons
+- `image-grid.html` — image-led evidence cards with consistent crop rhythm
+- `metric-timeline.html` — numbers, trend proof, timeline, adoption signal
+- `workflow.html` — pipeline, routine, handoff, operating process
+- `matrix-map.html` — quadrants, gates, layers, walls, decision maps
+- `category-overview.html` — project families, capability categories, section overview
+- `case-study.html` — product, project, automation, or skill proof page
+- `scenario-matrix.html` — dense business scene map or portfolio matrix
+- `interaction-sequence.html` — clicker-first gallery, demo reveal, before/after sequence
+
+## Architecture
 
 ```text
-.agents/skills/soulslide/   # Codex
-.claude/skills/soulslide/   # Claude
+.
+├── .agents/skills/soulslide/          # Codex installable skill
+│   ├── SKILL.md                       # trigger rules and compact workflow
+│   ├── agents/openai.yaml             # Codex UI metadata
+│   ├── assets/
+│   │   ├── soulslide.css              # shared design variables and primitives
+│   │   ├── templates/*.html           # reusable slide templates
+│   │   └── golden/*.png               # desensitized reference screenshots
+│   ├── references/
+│   │   ├── design-system.md           # visual language and typography rules
+│   │   ├── layout-patterns.md         # template catalog
+│   │   ├── template-decision-tree.md  # layout selection rules
+│   │   ├── golden-examples.md         # sample-to-template mapping
+│   │   ├── visual-assets.md           # image generation and asset rules
+│   │   ├── quality-gate.md            # lightweight slide audit checklist
+│   │   └── validation.md              # font and screenshot checks
+│   └── scripts/slide-font-audit.mjs   # readable font-size audit
+├── .claude/skills/soulslide/          # Claude-compatible copy
+├── scripts/sync-claude-skill.mjs      # refreshes Claude copy from Codex source
+├── assets/readme/                     # README hero and gallery images
+└── examples/                          # local example outputs
 ```
 
-## What Is Included
+Codex is the source copy. Edit `.agents/skills/soulslide/` first, then sync the Claude directory.
 
-- `SKILL.md` — trigger rules and compact workflow for agents.
-- `references/design-system.md` — SoulSlide visual language, typography, spacing, and anti-patterns.
-- `references/layout-patterns.md` — categorized layout templates for common editorial slide patterns.
-- `references/template-decision-tree.md` — direct rules for choosing the right template.
-- `references/golden-examples.md` — desensitized golden sample mapping for each decision-tree leaf.
-- `references/template-coverage-notes.md` — high-flavor source patterns that are documented but not yet core templates.
-- `references/visual-assets.md` — template-by-template rules for supplied assets, generated images, and draft-only placeholders.
-- `references/quality-gate.md` — lightweight audit checklist for style, hierarchy, layout, media, interaction, and shareability.
-- `references/workflow.md` — slide creation and adaptation workflow.
-- `references/validation.md` — font audit and screenshot validation rules.
-- `assets/soulslide.css` — shared design variables and component primitives.
-- `assets/templates/*.html` — safe placeholder templates for cover, closing, cards, maps, workflows, metrics, cases, category overviews, and interactive sequences.
-- `assets/golden/*.png` — generated screenshots of desensitized golden samples.
-- `scripts/slide-font-audit.mjs` — minimum readable font-size audit for slide cards and panels.
+## Installation
 
-## Local Check
+Clone or download this repository, then install the provider directory you need.
+
+Codex:
+
+```bash
+mkdir -p ~/.agents/skills
+cp -R .agents/skills/soulslide ~/.agents/skills/soulslide
+```
+
+Claude:
+
+```bash
+mkdir -p ~/.claude/skills
+cp -R .claude/skills/soulslide ~/.claude/skills/soulslide
+```
+
+Install both if you want the same slide style available in both agents.
+
+## Local Development
 
 ```bash
 npm run check
 ```
 
-## Keep Claude Copy In Sync
+This runs the font audit on Codex templates, Claude templates, and examples.
 
-Edit the Codex skill directory first, then refresh the Claude-compatible copy:
+After editing the Codex skill copy:
 
 ```bash
 npm run sync:claude
 npm run check
 ```
 
-The templates intentionally contain placeholder content. They preserve a consistent editorial layout grammar without copying source deck content or assets.
+For visible template or CSS changes, inspect at least one 16:9 screenshot manually before committing.
+
+## Included Guidance
+
+- `references/design-system.md` — typography, palette, spacing, and anti-patterns
+- `references/layout-patterns.md` — categorized template grammar
+- `references/template-decision-tree.md` — direct template selection rules
+- `references/template-coverage-notes.md` — high-flavor patterns not yet promoted to core templates
+- `references/visual-assets.md` — when to use supplied assets, generated images, or no image
+- `references/quality-gate.md` — style, hierarchy, layout, media, interaction, and shareability audit
+- `references/validation.md` — font audit, screenshot check, interaction check, and HTTP asset check
+
+The templates intentionally use safe placeholder content. They preserve style and layout grammar without copying private source-deck content or non-shareable assets.
