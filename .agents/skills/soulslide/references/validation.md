@@ -35,6 +35,8 @@ Use a 16:9 viewport:
 - `1280x720`
 - `1492x839`
 
+Also check one non-16:9 preview window, such as `1200x800` or `1440x760`. The slide should remain a centered 16:9 stage on the dark matte background. Side or top/bottom bars are expected; clipped cards, footer collisions, or hidden media are not.
+
 Check:
 
 - No text overflow or clipping.
@@ -71,6 +73,8 @@ Use the bundled Range-capable media server for local video checks:
 ```bash
 node .agents/skills/soulslide/scripts/serve-media.mjs --root path/to/deck --port 18189
 ```
+
+The bundled server sends `no-cache, no-store, must-revalidate` for HTML/CSS/JS so iterative screenshot checks do not reuse stale layout files.
 
 ## HTTP Check
 

@@ -67,10 +67,11 @@ function sendFile(req, res, file) {
 
   const ext = path.extname(file).toLowerCase();
   const type = MIME[ext] || 'application/octet-stream';
+  const liveAsset = ['.html', '.css', '.js', '.mjs'].includes(ext);
   const headers = {
     'content-type': type,
     'accept-ranges': 'bytes',
-    'cache-control': ext === '.html' ? 'no-cache, no-store, must-revalidate' : 'public, max-age=600',
+    'cache-control': liveAsset ? 'no-cache, no-store, must-revalidate' : 'public, max-age=600',
   };
 
   const range = req.headers.range;
@@ -94,11 +95,19 @@ function sendFile(req, res, file) {
       'content-length': boundedEnd - start + 1,
       'content-range': `bytes ${start}-${boundedEnd}/${stat.size}`,
     });
+    if (req.method === 'HEAD') {
+      res.end();
+      return;
+    }
     fs.createReadStream(file, { start, end: boundedEnd }).pipe(res);
     return;
   }
 
   res.writeHead(200, { ...headers, 'content-length': stat.size });
+  if (req.method === 'HEAD') {
+    res.end();
+    return;
+  }
   fs.createReadStream(file).pipe(res);
 }
 
@@ -111,12 +120,6 @@ const server = http.createServer((req, res) => {
   const file = safePath(url.pathname);
   if (!file) {
     sendError(res, 403, 'forbidden');
-    return;
-  }
-  if (req.method === 'HEAD') {
-    const stat = fs.existsSync(file) ? fs.statSync(file) : null;
-    if (!stat) sendError(res, 404, 'not found');
-    else res.writeHead(200, { 'content-length': stat.size }).end();
     return;
   }
   sendFile(req, res, file);
