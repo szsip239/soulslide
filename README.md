@@ -11,7 +11,10 @@ SoulSlide is an agent skill for creating editorial HTML presentation slides with
 - Interview-first workflow: the agent should gather audience, goal, materials, assets, constraints, and page count before writing HTML.
 - Navigation/index page: decks start with a reusable status-and-playback shell, including previous, next, home, and fullscreen controls.
 - Cover and closing pages: templates now include generated visual assets and light breathing/floating motion rules for key stage pages.
+- Profile and system-map pages: reusable templates now cover person-as-proof intros and inspectable full-system canvases.
+- Aesthetic review: high-visibility slides use a one-sentence design read and a composition anchor before layout work.
 - Self-hosted typography: templates load bundled WOFF2 fallbacks from the repository and no longer depend on Google Fonts.
+- Expanded audit: the existing slide audit checks readable type plus remote-font and copy/style guardrails.
 - Golden samples: README images and skill reference screenshots are regenerated from the current templates.
 
 ## What It Is For
@@ -21,6 +24,7 @@ Use SoulSlide when you want an AI coding agent to:
 - create a new HTML slide or deck section in a recognizable editorial style
 - redesign rough slide content into a clean projector-ready page
 - choose the right layout template before writing CSS
+- improve profile, system-map, cover, closing, and key visual pages with explicit composition anchors
 - keep title, body, quote, citation, and metadata hierarchy consistent
 - generate or request real visual assets where a template requires them
 - improve cover, closing, and key visual pages with explicit art direction and light motion rules
@@ -81,12 +85,14 @@ Core template families:
 - `cover.html` — opening page, chapter opener, title-led stage
 - `closing.html` — final page or closing call-to-action
 - `navigation.html` — deck index, lightweight development status, playback entry, bottom-left controls
+- `profile-intro.html` — person, speaker, owner, or role page where identity is proof
 - `media-essay.html` — one large image, video still, or artifact carries the argument
 - `quote-thesis.html` — one strong judgment or turning-point statement
 - `three-column.html` — conditions, benefits, requirements, comparisons
 - `image-grid.html` — image-led evidence cards with consistent crop rhythm
 - `metric-timeline.html` — numbers, trend proof, timeline, adoption signal
 - `workflow.html` — pipeline, routine, handoff, operating process
+- `full-system-map.html` — architecture, operating model, product map, or system canvas
 - `matrix-map.html` — quadrants, gates, layers, walls, decision maps
 - `category-overview.html` — project families, capability categories, section overview
 - `case-study.html` — product, project, automation, or skill proof page
@@ -107,6 +113,7 @@ Core template families:
 │   │   ├── templates/*.html           # reusable slide templates
 │   │   └── golden/*.png               # desensitized reference screenshots
 │   ├── references/
+│   │   ├── aesthetic-review.md       # design read, composition anchors, copy taste guardrails
 │   │   ├── art-direction.md           # cover, closing, key image, and motion rules
 │   │   ├── briefing.md                # prompt and customer brief patterns
 │   │   ├── deck-shell.md              # navigation/index page and controls
@@ -118,7 +125,7 @@ Core template families:
 │   │   ├── visual-assets.md           # image generation and asset rules
 │   │   ├── quality-gate.md            # lightweight slide audit checklist
 │   │   └── validation.md              # font and screenshot checks
-│   └── scripts/slide-font-audit.mjs   # readable font-size audit
+│   └── scripts/slide-font-audit.mjs   # readable type + lightweight quality audit
 ├── .claude/skills/soulslide/          # Claude-compatible copy
 ├── scripts/sync-claude-skill.mjs      # refreshes Claude copy from Codex source
 ├── assets/readme/                     # README hero and gallery images
@@ -148,6 +155,7 @@ Install both if you want the same slide style available in both agents.
 ## Included Guidance
 
 - `references/design-system.md` — typography, palette, spacing, and anti-patterns
+- `references/aesthetic-review.md` — design read, composition anchors, copy taste, and image-generation reminders
 - `references/art-direction.md` — cover, closing, key visual, image generation, and motion rules
 - `references/briefing.md` — prompt patterns and page-by-page customer brief structure
 - `references/deck-shell.md` — navigation/index page and playback control rules

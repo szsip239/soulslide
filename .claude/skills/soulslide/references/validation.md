@@ -1,6 +1,6 @@
 # SoulSlide Validation
 
-## Font Audit
+## Slide Audit
 
 Run:
 
@@ -14,13 +14,13 @@ Default thresholds:
 - Labels and decorative chrome: `>= 14.5px`
 - Source/citation/metadata: `>= 12.5px`
 
-Passing the script is not enough. The visual hierarchy still matters.
+The same script also checks for remote font links and the lightweight copy/style guardrails in `references/aesthetic-review.md`. Passing the script is not enough. The visual hierarchy still matters.
 
 ## Quality Gate
 
 Before screenshot approval, apply `references/quality-gate.md`.
 
-The gate catches problems the numeric font audit cannot see:
+The gate catches problems the numeric audit cannot see:
 
 - weak title/body/citation hierarchy
 - generic card-grid or SaaS-like visual drift

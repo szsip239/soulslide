@@ -9,12 +9,14 @@ This catalog distills reusable editorial slide layout grammar. Use it to pick a 
 | Cover Stage | `assets/templates/cover.html` | Opening page, talk title, big thesis, speaker/event metadata |
 | Closing Signature | `assets/templates/closing.html` | Final page, call-to-action, memorable closing line |
 | Navigation Index | `assets/templates/navigation.html` | Deck index, lightweight development status, presentation player shell |
+| Profile Intro | `assets/templates/profile-intro.html` | Speaker, owner, role, or team member introduction where identity is proof |
 | Media Essay | `assets/templates/media-essay.html` | One large image, video still, or artifact carries the argument |
 | Quote Thesis | `assets/templates/quote-thesis.html` | One strong argument, turning point, field note, or quote-led claim |
 | Three Column | `assets/templates/three-column.html` | Requirements, benefits, principles, comparisons, signup pages |
 | Image Grid | `assets/templates/image-grid.html` | 4-6 ideas with visual evidence and citations |
 | Metric Timeline | `assets/templates/metric-timeline.html` | Market signal, proof points, timeline, release history |
 | Workflow | `assets/templates/workflow.html` | Daily process, pipeline, handoff, step-by-step operations |
+| Full System Map | `assets/templates/full-system-map.html` | One inspectable architecture, operating model, product map, or system canvas |
 | Matrix Map | `assets/templates/matrix-map.html` | Quadrants, layers, gates, walls, decision maps |
 | Category Overview | `assets/templates/category-overview.html` | Project families, capability categories, practice maps, section overview |
 | Case Study | `assets/templates/case-study.html` | Product/project page with screenshot, capabilities, build path |
@@ -114,6 +116,31 @@ Avoid:
 
 Read `references/art-direction.md` before using this template.
 
+## 2.7 Profile Intro
+
+Use this when a person, speaker, project owner, or role is part of the argument.
+
+Structure:
+
+- Portrait or safe non-likeness visual on the left.
+- Compact identity block on the right.
+- One thesis sentence explaining why the person matters to the topic.
+- 3-4 proof points: practice range, representative output, audience value, question entry.
+- Small image strip or field-note strip below the portrait.
+
+Use for:
+
+- Speaker introductions.
+- Team member or founder profile pages.
+- Project owner credibility pages.
+- Role introductions before a case section.
+
+Avoid:
+
+- Fabricating a real person's likeness.
+- Letting the portrait overlap or overpower the biography text.
+- Turning the page into a resume timeline.
+
 ## 3. Three Column
 
 Use this for signup pages, principle pages, account requirements, and structured comparisons.
@@ -203,7 +230,32 @@ Use for:
 - Automation pipelines.
 - Human/AI handoff loops.
 
-## 8. Matrix Map
+## 8. Full System Map
+
+Use this for a single architecture, product map, operating model, puzzle map, or system canvas that should be inspected as one diagram.
+
+Structure:
+
+- One dominant diagram canvas.
+- Central loop or core node.
+- Peripheral input/output/governance/feedback areas.
+- Small but readable labels; never rely on unreadable image text.
+- Side legend and one thesis panel.
+
+Use for:
+
+- System architecture overview.
+- AI operating model.
+- Product map or platform capability map.
+- End-to-end process landscape.
+
+Avoid:
+
+- Exporting the whole logic as a flat image with tiny labels.
+- Adding decorative generated art that competes with the system labels.
+- Cramming every implementation detail onto one slide.
+
+## 9. Matrix Map
 
 Source inspiration: taste/professionalism quadrant, five gates, five layers, five walls.
 
@@ -220,7 +272,7 @@ Use for:
 - Bottlenecks and unlocks.
 - Strategy frameworks.
 
-## 9. Category Overview
+## 10. Category Overview
 
 Use this for a portfolio, practice map, capability overview, or project family page.
 
@@ -236,7 +288,7 @@ Use for:
 - "These are the capability families."
 - "This section contains these types of work."
 
-## 10. Case Study
+## 11. Case Study
 
 Source inspiration: TeamClaw, Skill case, product/platform pages.
 
@@ -253,7 +305,7 @@ Use for:
 - Internal case studies.
 - AI skill or automation examples.
 
-## 11. Scenario Matrix
+## 12. Scenario Matrix
 
 Source inspiration: enterprise AI full-scenario map.
 
@@ -269,7 +321,7 @@ Use for:
 - Enterprise scenario discovery.
 - Roadmap prioritization.
 
-## 12. Interaction Sequence
+## 13. Interaction Sequence
 
 Source inspiration: speaker photo gallery, TeamClaw build sequence, video reveal pages.
 
@@ -296,6 +348,8 @@ Avoid:
 - If the slide answers "what are the options?", start with `three-column` or `image-grid`.
 - If the slide answers "what is the core judgment?", start with `quote-thesis`.
 - If it answers "how does it work?", start with `workflow`.
+- If it answers "who is this person and why should we trust them?", start with `profile-intro`.
+- If it answers "how does the whole system fit together?", start with `full-system-map`.
 - If it answers "why now?", start with `metric-timeline`.
 - If it answers "where are we blocked?", start with `matrix-map`.
 - If it answers "what families of work exist?", start with `category-overview`.

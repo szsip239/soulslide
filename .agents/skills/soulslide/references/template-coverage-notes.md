@@ -1,18 +1,28 @@
 # Template Coverage Notes
 
-The current core set covers the repeated editorial grammar: cover, closing, navigation, media essay, quote thesis, three columns, image grid, metric timeline, workflow, matrix map, category overview, case study, scenario matrix, and clicker-driven sequence.
+The current core set covers the repeated editorial grammar: cover, closing, navigation, profile intro, media essay, quote thesis, three columns, image grid, metric timeline, workflow, full system map, matrix map, category overview, case study, scenario matrix, and clicker-driven sequence.
 
 Some high-flavor source patterns are intentionally documented here before becoming templates. Use these notes when a user asks for a slide that does not fit the decision tree cleanly.
 
-## Strong Candidates Not Yet Promoted
+## Promoted Patterns
 
 ### Profile Intro
 
 Use for a speaker, founder, project owner, team member, or role introduction where the person is part of the argument.
 
 - Signature ingredients: portrait or personal visual on one side, compact identity block, short biographical proof points, one controlled image strip or sequence.
-- Existing fallback: start from `case-study.html` for the biography area, then borrow image rhythm from `interaction-sequence.html`.
-- Promote to a template when multiple decks need a reusable "about the person" page.
+- Core template: `assets/templates/profile-intro.html`.
+- Golden sample: `assets/golden/profile-intro.png`.
+
+### Full System Map
+
+Use for a single full-slide architecture, product map, puzzle map, or operating model that must be inspected as one canvas.
+
+- Signature ingredients: one large diagram, restrained legend, small but readable labels, minimal surrounding chrome.
+- Core template: `assets/templates/full-system-map.html`.
+- Golden sample: `assets/golden/full-system-map.png`.
+
+## Strong Candidates Not Yet Promoted
 
 ### Live Poll Dashboard
 
@@ -37,14 +47,6 @@ Use for two-sided cooperation, economics, incentive flow, or "who pays / who gai
 - Signature ingredients: two or three actors, value arrows, ledger rows, risk and upside separated.
 - Existing fallback: `matrix-map.html` or `case-study.html`.
 - Promote when partnership or commercial-model slides recur.
-
-### Full System Map
-
-Use for a single full-slide architecture, product map, puzzle map, or operating model that must be inspected as one canvas.
-
-- Signature ingredients: one large diagram, restrained legend, small but readable labels, minimal surrounding chrome.
-- Existing fallback: `scenario-matrix.html` when tabular, `matrix-map.html` when layered.
-- Promote when the diagram shape is stable enough to reuse across decks.
 
 ## Promotion Rule
 

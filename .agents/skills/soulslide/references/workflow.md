@@ -5,10 +5,11 @@
 1. Identify the slide's one-sentence thesis.
 2. For a deck or unclear request, interview the user for missing audience, goal, materials, asset paths, constraints, and length.
 3. Return a page-by-page outline table with recommended templates and open questions; wait for confirmation before development.
-4. Decide whether each slide is navigation, opening, closing, explanation, proof, map, process, or case.
-5. Pick a template from `layout-patterns.md`.
-6. For cover, closing, media-led, case, image-grid, or interaction-sequence pages, read `references/art-direction.md` and define the visual/motion plan.
-7. Decide the information hierarchy before filling content.
+4. Decide whether each slide is navigation, opening, closing, profile, explanation, proof, system map, process, or case.
+5. For high-visibility slides, read `references/aesthetic-review.md` and write the one-sentence design read plus one composition anchor.
+6. Pick a template from `layout-patterns.md`.
+7. For cover, closing, media-led, profile, case, image-grid, full-system-map, or interaction-sequence pages, read `references/art-direction.md` when visuals or motion matter, then define the visual plan.
+8. Decide the information hierarchy before filling content.
 
 ## Content Compression
 
@@ -30,7 +31,7 @@ SoulSlide works best when the slide feels edited.
 6. Preserve the deck navigation/index player shell and home/previous/next/fullscreen controls.
 7. Keep existing CSS class names unless a new layout truly needs a new primitive.
 8. Add page-specific CSS only after checking whether `soulslide.css` already has the component.
-9. Run the font audit script.
+9. Run the SoulSlide audit script.
 10. Screenshot the slide at 16:9 and inspect visually.
 
 ## Adapting an Existing Slide

@@ -30,7 +30,9 @@ Use this gate after choosing a template and before final screenshot approval. It
 
 - Avoid gradient text, glass panels, decorative blobs, and ornamental shapes that do not carry meaning.
 - Avoid uniform same-size card grids when the content has a real hierarchy.
-- Avoid filling the page with tiny eyebrow labels; use labels only when they help scanning.
+- Do not add a tiny English eyebrow to every page; use labels only when they help scanning.
+- Do not repeatedly use the aphoristic cadence "不是 X，而是 Y".
+- Avoid empty buzzwords in slide text: `赋能`, `重塑`, `无缝`, `下一代`, `革命性`.
 - Warm paper, thin accent rules, page numbers, and restrained edge markers are allowed because they are part of this style.
 - Avoid stock-photo-like images, fake generated product UIs, AI-purple glows, and visuals that do not support the argument.
 
@@ -50,4 +52,4 @@ Use this gate after choosing a template and before final screenshot approval. It
 
 ## 7. Final Proof
 
-Run the font audit, open the slide in a 16:9 browser viewport, and inspect a screenshot. Passing only one of those checks is not enough.
+Run the SoulSlide audit, open the slide in a 16:9 browser viewport, and inspect a screenshot. Passing only one of those checks is not enough.

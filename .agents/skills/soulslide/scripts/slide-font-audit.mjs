@@ -15,9 +15,12 @@ const minLabelPx = optionNumber('--min-label-px', 14.5);
 const minMetaPx = optionNumber('--min-meta-px', 12.5);
 const targets = args.filter(arg => !arg.startsWith('--'));
 
-const BOX_HINT = /(card|panel|box|tile|step|item|mini|module|block|lens|pill|note|quote|stat|row|cell|frame|story|flow|meta|skill|practice|account|warning|chain|grid|ladder|routine|map|matrix|scenario|case|shot|cap|seq|overlay|closing|cover)/i;
+const BOX_HINT = /(card|panel|box|tile|step|item|mini|module|block|lens|pill|note|quote|stat|row|cell|frame|story|flow|meta|skill|practice|account|warning|chain|grid|ladder|routine|map|matrix|scenario|case|shot|cap|seq|overlay|closing|cover|profile|portrait|system|node|legend|lane|anchor|proof|diagram)/i;
 const LABEL_HINT = /(^|[^a-z0-9])(tag|label|lb|caption|cap|badge|kicker|eyebrow|cmd-title|k|hint|foot|url|mono|count|num|no|ord|pg|mark|dot|line|arrow|icon|qr|overlay|motif|brand|topic|page|date|unit)(?=$|[^a-z0-9])/i;
 const META_HINT = /(^|[^a-z0-9])(cite|source|src|ref|credit|byline|author|meta)(?=$|[^a-z0-9])/i;
+const REMOTE_FONT_RE = /fonts\.(googleapis|gstatic)\.com/i;
+const BUZZWORDS = ['赋能', '重塑', '无缝', '下一代', '革命性'];
+const APHORISM_RE = /不是[^。！？；;]{1,48}而是/g;
 
 function optionNumber(name, fallback) {
   const item = args.find(arg => arg.startsWith(`${name}=`));
@@ -68,6 +71,14 @@ function lineAt(text, index) {
   return text.slice(0, index).split('\n').length;
 }
 
+function stripHtmlForText(html) {
+  return html
+    .replace(/<script\b[\s\S]*?<\/script>/gi, '')
+    .replace(/<style\b[\s\S]*?<\/style>/gi, '')
+    .replace(/<!--[\s\S]*?-->/g, '')
+    .replace(/<[^>]+>/g, ' ');
+}
+
 function fontPx(value) {
   const matches = [...value.matchAll(/(-?\d*\.?\d+)\s*(rem|em|px|%)/gi)];
   if (!matches.length) return null;
@@ -113,6 +124,55 @@ function auditCss(css, rel, offsetLine = 0) {
   return issues;
 }
 
+function auditHtmlQuality(html, rel) {
+  const issues = [];
+  const visibleText = stripHtmlForText(html);
+
+  const remoteFontMatch = html.match(REMOTE_FONT_RE);
+  if (remoteFontMatch) {
+    issues.push({
+      file: rel,
+      line: lineAt(html, remoteFontMatch.index || 0),
+      kind: 'asset',
+      message: 'Remote font link found; use bundled SoulSlide font CSS for recoverable local rendering.',
+    });
+  }
+
+  for (const term of BUZZWORDS) {
+    const index = visibleText.indexOf(term);
+    if (index !== -1) {
+      issues.push({
+        file: rel,
+        line: 1,
+        kind: 'copy',
+        message: `Avoid empty buzzword "${term}" in visible slide text.`,
+      });
+    }
+  }
+
+  const aphorisms = [...visibleText.matchAll(APHORISM_RE)];
+  if (aphorisms.length > 1) {
+    issues.push({
+      file: rel,
+      line: 1,
+      kind: 'copy',
+      message: 'Repeated "不是 X，而是 Y" cadence found; keep this rhetorical move rare.',
+    });
+  }
+
+  const eyebrowCount = [...html.matchAll(/\bclass\s*=\s*["'][^"']*\bss-eyebrow\b/gi)].length;
+  if (eyebrowCount > 1) {
+    issues.push({
+      file: rel,
+      line: 1,
+      kind: 'style',
+      message: `Found ${eyebrowCount} .ss-eyebrow labels on one slide; use small English eyebrows sparingly.`,
+    });
+  }
+
+  return issues;
+}
+
 function linkedStylesheets(html, file) {
   const stylesheets = [];
   const linkRe = /<link\b[^>]*>/gi;
@@ -133,7 +193,7 @@ function linkedStylesheets(html, file) {
 function auditFile(file) {
   const html = fs.readFileSync(file, 'utf8');
   const rel = displayPath(file);
-  const issues = [];
+  const issues = auditHtmlQuality(html, rel);
 
   const styleRe = /<style\b[^>]*>([\s\S]*?)<\/style>/gi;
   for (const styleMatch of html.matchAll(styleRe)) {
@@ -160,16 +220,19 @@ for (const cssPath of [...stylesheetSet].sort()) {
 if (json) {
   console.log(JSON.stringify({ minBodyPx, minLabelPx, minMetaPx, files: targetFiles.map(displayPath), issues }, null, 2));
 } else {
-  console.log(`SoulSlide font audit: body >= ${minBodyPx}px, label >= ${minLabelPx}px, metadata >= ${minMetaPx}px`);
+  console.log(`SoulSlide audit: body >= ${minBodyPx}px, label >= ${minLabelPx}px, metadata >= ${minMetaPx}px; plus copy/style guardrails`);
   if (!issues.length) {
-    console.log('OK: no undersized box text found.');
+    console.log('OK: no undersized box text or quality guardrail issues found.');
   } else {
     for (const issue of issues) {
-      console.log(`${issue.file}:${issue.line} [${issue.kind}] ${issue.selector} -> ${issue.fontSize} (${issue.px}px < ${issue.minPx}px)`);
+      if (issue.selector) {
+        console.log(`${issue.file}:${issue.line} [${issue.kind}] ${issue.selector} -> ${issue.fontSize} (${issue.px}px < ${issue.minPx}px)`);
+      } else {
+        console.log(`${issue.file}:${issue.line} [${issue.kind}] ${issue.message}`);
+      }
     }
-    console.log(`Found ${issues.length} undersized box text styles.`);
+    console.log(`Found ${issues.length} audit issue(s).`);
   }
 }
 
 if (issues.length && !noFail) process.exit(1);
-

@@ -17,12 +17,14 @@ Use this reference when a slide needs a bitmap image, generated illustration, sc
 | `cover.html` | Recommended for high-visibility decks | Use a 16:9 immersive background, object crop, or material field when it makes the topic more concrete. Keep enough quiet area for the title. |
 | `closing.html` | Optional but useful | Keep it typographic unless a final artifact, place, object, or quiet stage can strengthen the closing sentence. |
 | `navigation.html` | Usually none | Use tabs, section cards, and player controls; do not add decorative art. |
+| `profile-intro.html` | Recommended | Use a supplied portrait when permission-safe. Do not fabricate a real person's likeness; if no portrait is provided, generate a non-likeness workspace, object, back-view, or silhouette scene. |
 | `media-essay.html` | Required | One large image, video still, artifact photo, or generated frame is the slide's first read. |
 | `quote-thesis.html` | Usually none | Do not add decorative images. Use a visual only when the claim is about a tangible scene or artifact. |
 | `three-column.html` | Usually none | Prefer text hierarchy and accent rules. Small icons are optional, but avoid generic clip-art. |
 | `image-grid.html` | Required | Use 4-6 related images with the same crop rhythm and visual language. Generate a coherent set when no safe assets exist. |
 | `metric-timeline.html` | Optional | Add a figure/photo panel only when it strengthens the "why now" argument. Numbers and timeline remain primary. |
 | `workflow.html` | Usually none | Prefer HTML/CSS process structure. Use generated images only for demo screenshots or before/after proof. |
+| `full-system-map.html` | Usually none | Keep the map's labels and core logic as HTML/CSS. Use generated visuals only as quiet background texture or supporting proof, never as the only readable diagram. |
 | `matrix-map.html` | Usually none | Use structured layout, connectors, and labels instead of decorative art. |
 | `category-overview.html` | Usually none | Use chips and labels. Generate icons only when the user explicitly asks for visual categories. |
 | `case-study.html` | Required | Prefer a real, shareable screenshot. If unavailable, generate an abstract interface mockup, architecture sketch, or product-like proof image. |
@@ -31,11 +33,9 @@ Use this reference when a slide needs a bitmap image, generated illustration, sc
 
 Candidate templates from `template-coverage-notes.md`:
 
-- Profile intro: use a supplied portrait when available. Do not fabricate a real person's likeness; if no portrait is provided, generate a non-likeness workspace, object, or silhouette scene.
 - Live poll dashboard: usually no generated image; the QR/result area is interface structure.
 - Knowledge constellation: prefer structured HTML/CSS diagramming; use generated background only if it remains quiet.
 - Value ledger: usually no generated image.
-- Full system map: prefer structured diagramming; generate only if the map is intentionally illustrative.
 
 ## Prompt Recipe
 

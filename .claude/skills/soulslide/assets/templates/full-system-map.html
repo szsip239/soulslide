@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>12 · Full System Map</title>
+<link rel="stylesheet" href="../soulslide.css">
+</head>
+<body class="ss-doc">
+<main class="ss-slide">
+  <header class="ss-head"><div class="ss-brand">SoulSlide template</div><div class="ss-topic">full system map</div><div class="ss-page">12 / 14</div></header>
+  <section class="ss-title-row">
+    <div class="ss-title-num">12</div>
+    <h1 class="ss-title-main">全局系统图：把复杂结构放进 <span class="ss-mark">一张画布</span></h1>
+    <div class="ss-kicker">适合架构、产品地图、组织运转模型、AI 工作系统。核心图用 HTML/CSS 保持可读。</div>
+  </section>
+  <section class="ss-main ss-system-layout">
+    <section class="ss-system-canvas" aria-label="Full system map canvas">
+      <div class="ss-system-wire" style="left:16%;top:43%;width:68%;transform:rotate(0deg)"></div>
+      <div class="ss-system-wire vertical" style="left:50%;top:18%;height:58%"></div>
+      <div class="ss-system-wire" style="left:25%;top:67%;width:48%;transform:rotate(-17deg)"></div>
+      <article class="ss-system-rail" style="grid-column:1 / span 3;grid-row:1 / span 2"><h3>输入层</h3><p>材料、数据、现场问题和用户反馈。</p></article>
+      <article class="ss-system-rail" style="grid-column:10 / span 3;grid-row:1 / span 2"><h3>输出层</h3><p>页面、报告、技能、流程和交付件。</p></article>
+      <article class="ss-system-rail dark" style="grid-column:1 / span 3;grid-row:7 / span 2"><h3>治理层</h3><p>权限、复盘、审计和版本记录。</p></article>
+      <article class="ss-system-rail" style="grid-column:10 / span 3;grid-row:7 / span 2"><h3>反馈层</h3><p>截图验证、用户确认和下一轮修订。</p></article>
+      <article class="ss-system-node core" style="grid-column:5 / span 4;grid-row:4 / span 2">
+        <span class="ss-node-tag">core loop</span>
+        <h3>核心工作循环</h3>
+        <p>采访、拆页、选模板、制作、截图验证、沉淀规范。</p>
+      </article>
+      <article class="ss-system-node" style="grid-column:4 / span 3;grid-row:2 / span 2">
+        <span class="ss-node-tag">plan</span>
+        <h3>页面计划</h3>
+        <p>先确认每页主旨、页型、素材和开放问题。</p>
+      </article>
+      <article class="ss-system-node blue" style="grid-column:7 / span 3;grid-row:2 / span 2">
+        <span class="ss-node-tag">assets</span>
+        <h3>素材策略</h3>
+        <p>判断图片是证据、舞台、序列还是不需要。</p>
+      </article>
+      <article class="ss-system-node green" style="grid-column:4 / span 3;grid-row:6 / span 2">
+        <span class="ss-node-tag">build</span>
+        <h3>页面实现</h3>
+        <p>复制模板，保留字体层级、间距和 16:9 约束。</p>
+      </article>
+      <article class="ss-system-node" style="grid-column:7 / span 3;grid-row:6 / span 2">
+        <span class="ss-node-tag">verify</span>
+        <h3>质量验证</h3>
+        <p>运行审计，截图检查，不让文字和图像互相挤压。</p>
+      </article>
+    </section>
+    <aside class="ss-system-side">
+      <section class="ss-system-claim">
+        <h3>使用原则</h3>
+        <p>这类页面的视觉重心是可检查的系统关系，装饰图只服务背景，不承担标签和逻辑。</p>
+      </section>
+      <section class="ss-system-legend">
+        <h3>读图顺序</h3>
+        <dl>
+          <div><dt>01</dt><dd>先读中心循环，确认这张图讨论的系统边界。</dd></div>
+          <div><dt>02</dt><dd>再看四角输入、输出、治理、反馈。</dd></div>
+          <div><dt>03</dt><dd>最后检查节点之间的依赖和缺口。</dd></div>
+        </dl>
+      </section>
+      <div class="ss-system-check">如果标签需要缩到 14px 以下，说明这页应该拆成两页或改成分步 sequence。</div>
+    </aside>
+  </section>
+  <footer class="ss-foot"><span>Full system map</span><span class="ss-line">Readable system relations on one canvas.</span><span>12</span></footer>
+</main>
+</body>
+</html>
