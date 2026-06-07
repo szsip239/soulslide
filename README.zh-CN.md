@@ -142,4 +142,12 @@ cp -R .claude/skills/soulslide ~/.claude/skills/soulslide
 - `references/quality-gate.md`：风格、层级、布局、媒体、交互和可分享性审计
 - `references/validation.md`：字号审计、截图检查、交互检查和 HTTP 资源检查
 
+## 协议
+
+SoulSlide 采用 [PolyForm Noncommercial License 1.0.0](LICENSE) 发布，是 source-available 项目。
+
+个人非商业使用免费。未经版权持有人另行书面许可，不允许商用。
+
+因为该协议限制商业使用，SoulSlide 不属于 OSI 认可口径的开源项目。
+
 模板内容刻意使用安全占位。它们保留风格和布局语法，但不复制私有源 deck 内容或不可分享资产。
