@@ -6,9 +6,9 @@
 
 SoulSlide 是一个面向 Codex 和 Claude 的 agent skill，用于生成具有一致视觉语言的 HTML 演示页：16:9 投影优先、暖纸质感、强中文字体层级、克制卡片，以及可复用的页面模板。
 
-## 核心优势
+## 特点
 
-![SoulSlide 核心优势图](assets/readme/core-advantages.png)
+![SoulSlide 特点](assets/readme/core-advantages.png)
 
 ## 模板图库
 
