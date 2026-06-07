@@ -9,6 +9,7 @@ This catalog distills reusable editorial slide layout grammar. Use it to pick a 
 | Cover Stage | `assets/templates/cover.html` | Opening page, talk title, big thesis, speaker/event metadata |
 | Closing Signature | `assets/templates/closing.html` | Final page, call-to-action, memorable closing line |
 | Navigation Index | `assets/templates/navigation.html` | Deck index, lightweight development status, presentation player shell |
+| Media Essay | `assets/templates/media-essay.html` | One large image, video still, or artifact carries the argument |
 | Quote Thesis | `assets/templates/quote-thesis.html` | One strong argument, turning point, field note, or quote-led claim |
 | Three Column | `assets/templates/three-column.html` | Requirements, benefits, principles, comparisons, signup pages |
 | Image Grid | `assets/templates/image-grid.html` | 4-6 ideas with visual evidence and citations |
@@ -86,6 +87,32 @@ Avoid:
 - Treating it as a decorative title page.
 - Rebuilding it as a generic status slide with a left panel and right list.
 - Removing the control bar after content pages are built.
+
+## 2.6 Media Essay
+
+Use this when a single image, video still, object, interface, or generated frame should dominate the slide.
+
+Structure:
+
+- One large visual stage on the left or as the majority surface.
+- One dark interpretation panel with page number, short label, title, body, and source.
+- Minimal chrome; the visual is the first read.
+- Optional light ambient motion on the visual stage only.
+
+Use for:
+
+- Video/photo interpretation.
+- Artifact review.
+- Emotional transition pages.
+- Before/after hero frame when one frame is enough.
+
+Avoid:
+
+- Turning it into a card grid.
+- Adding multiple unrelated images.
+- Using a decorative stock image that does not carry the argument.
+
+Read `references/art-direction.md` before using this template.
 
 ## 3. Three Column
 

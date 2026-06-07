@@ -45,6 +45,8 @@ Check:
 - Title is stronger than cards.
 - Body is stronger than citation metadata.
 - Footer and labels are visible but not competing with the slide thesis.
+- Cover, closing, and media-led pages have a clear art-direction read and do not rely on generic filler visuals.
+- Any motion is purposeful, works with keyboard/presenter flow, and has a reduced-motion fallback.
 
 ## Interaction Check
 

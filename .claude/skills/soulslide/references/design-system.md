@@ -104,7 +104,16 @@ Use this structure unless the cover or closing template intentionally overrides 
 - Image-card groups need fixed image height or aspect ratio.
 - Do not let text length compress image height.
 - Use captions and citations as metadata, not as the main message.
-- For missing images, use a neutral placeholder block with a label instead of broken image icons.
+- For cover, closing, media-led, case, image-grid, or sequence pages, read `references/art-direction.md` and use generated or supplied real assets before final delivery.
+- For missing draft images, use a neutral placeholder block with a label instead of broken image icons, then replace it before final delivery when the template requires the visual.
+
+## Art Direction
+
+- Cover and closing pages need one memorable visual or typographic decision.
+- Key visual pages should start with a design read: slide job, audience, visual mood, and image role.
+- Do not default to text-only covers, stock-photo filler, AI-purple glows, decorative blobs, or fake product screenshots.
+- Do not use a visual if it has no structural role in the argument.
+- If one image/video/artifact is the slide, use `media-essay.html` rather than forcing a card grid.
 
 ## Metrics
 
@@ -117,6 +126,9 @@ Do not render `37.5万+` as one bold Chinese text run. Use a structured metric:
 ## Interaction
 
 - Presenter-clicker and keyboard paths matter more than mouse-only polish.
+- Motion must have a reason: hierarchy, sequence, state, or atmosphere.
+- Animate only `transform` and `opacity`; honor `prefers-reduced-motion`.
+- Use at most one ambient loop on a slide.
 - Full decks should keep a navigation/index player shell that follows `references/navigation-style.md`, plus a bottom-left home / previous / next / fullscreen control bar.
 - Normal navigation: ArrowRight/PageDown/Space next, ArrowLeft/PageUp previous.
 - Forced sequence slides should expose `window.__seqHandleNav(key)` and set `window.__seqBlockNav` while the sequence must consume navigation.

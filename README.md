@@ -15,6 +15,7 @@ Use SoulSlide when you want an AI coding agent to:
 - choose the right layout template before writing CSS
 - keep title, body, quote, citation, and metadata hierarchy consistent
 - generate or request real visual assets where a template requires them
+- improve cover, closing, and key visual pages with explicit art direction and light motion rules
 - validate font size, image rhythm, clicker behavior, and 16:9 screenshot quality
 
 SoulSlide is not a generic PPT theme. It is a compact production grammar for HTML slides that should look like they came from the same deck family.
@@ -71,6 +72,7 @@ Core template families:
 - `cover.html` — opening page, chapter opener, title-led stage
 - `closing.html` — final page or closing call-to-action
 - `navigation.html` — deck index, lightweight development status, playback entry, bottom-left controls
+- `media-essay.html` — one large image, video still, or artifact carries the argument
 - `quote-thesis.html` — one strong judgment or turning-point statement
 - `three-column.html` — conditions, benefits, requirements, comparisons
 - `image-grid.html` — image-led evidence cards with consistent crop rhythm
@@ -94,6 +96,7 @@ Core template families:
 │   │   ├── templates/*.html           # reusable slide templates
 │   │   └── golden/*.png               # desensitized reference screenshots
 │   ├── references/
+│   │   ├── art-direction.md           # cover, closing, key image, and motion rules
 │   │   ├── briefing.md                # prompt and customer brief patterns
 │   │   ├── deck-shell.md              # navigation/index page and controls
 │   │   ├── navigation-style.md        # fixed index/player shell visual reference
@@ -134,6 +137,7 @@ Install both if you want the same slide style available in both agents.
 ## Included Guidance
 
 - `references/design-system.md` — typography, palette, spacing, and anti-patterns
+- `references/art-direction.md` — cover, closing, key visual, image generation, and motion rules
 - `references/briefing.md` — prompt patterns and page-by-page customer brief structure
 - `references/deck-shell.md` — navigation/index page and playback control rules
 - `references/navigation-style.md` — fixed visual reference for the deck index/player shell

@@ -24,6 +24,7 @@ Use this gate after choosing a template and before final screenshot approval. It
 - Required visual slots contain real supplied or generated assets, not final text placeholders.
 - Cards are not nested inside cards.
 - Rounded corners and shadows stay restrained; repeated panels should feel editorial, not like generic SaaS tiles.
+- Cover, closing, and media-led key pages have one clear visual or typographic moment, not generic flat filler.
 
 ## 4. Style Integrity
 
@@ -31,10 +32,13 @@ Use this gate after choosing a template and before final screenshot approval. It
 - Avoid uniform same-size card grids when the content has a real hierarchy.
 - Avoid filling the page with tiny eyebrow labels; use labels only when they help scanning.
 - Warm paper, thin accent rules, page numbers, and restrained edge markers are allowed because they are part of this style.
+- Avoid stock-photo-like images, fake generated product UIs, AI-purple glows, and visuals that do not support the argument.
 
 ## 5. Media And Interaction
 
 - Every referenced image, video, or font loads in the target environment.
+- Motion has a named purpose: hierarchy, sequence, state, or atmosphere.
+- Motion uses `transform` and `opacity`, and respects reduced-motion preferences.
 - Important interactions work by keyboard or presenter clicker.
 - Full decks keep the navigation/index player shell and bottom-left home/previous/next/fullscreen controls.
 - A sequence slide releases deck navigation after its internal sequence ends.

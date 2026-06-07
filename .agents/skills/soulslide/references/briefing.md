@@ -34,6 +34,7 @@ When the user provides an incomplete idea, ask concise questions that unlock the
 - Local files: ask the user to provide file paths for any outline, reference content, images, screenshots, videos, or design assets.
 - Constraints: public/private, must-avoid claims, brand tone, deadline, delivery format, and whether generated images are allowed.
 - Interaction: whether the deck needs a navigation/index player shell, clicker sequence, demo reveal, or embedded media.
+- Art direction: whether cover, closing, and key pages should use generated imagery, supplied screenshots, video stills, or light motion.
 
 Do not ask every possible question. Ask the smallest set that changes the outline, recommended templates, or asset plan.
 
@@ -71,6 +72,7 @@ Rules:
 - Opening or chapter title: `cover.html`
 - Final line or call-to-action: `closing.html`
 - Deck navigation/index player shell: `navigation.html`
+- Media-led key moment: `media-essay.html`
 - One memorable stance: `quote-thesis.html`
 - Three comparable groups: `three-column.html`
 - Evidence cards with images: `image-grid.html`
@@ -94,6 +96,7 @@ Follow the recommended template for each page.
 Keep one thesis per page.
 Use supplied assets where available.
 Generate required visuals if the template needs them and no safe asset is supplied.
+For cover, closing, and media-led key pages, read art-direction guidance and define the visual/motion plan before coding.
 Keep previous, next, and fullscreen controls in the deck shell.
 Validate each page with the font audit and a 16:9 screenshot.
 Report any pages that need my content decision before finalizing.

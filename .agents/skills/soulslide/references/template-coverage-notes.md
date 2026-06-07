@@ -1,6 +1,6 @@
 # Template Coverage Notes
 
-The current core set covers the repeated editorial grammar: cover, closing, quote thesis, three columns, image grid, metric timeline, workflow, matrix map, category overview, case study, scenario matrix, and clicker-driven sequence.
+The current core set covers the repeated editorial grammar: cover, closing, navigation, media essay, quote thesis, three columns, image grid, metric timeline, workflow, matrix map, category overview, case study, scenario matrix, and clicker-driven sequence.
 
 Some high-flavor source patterns are intentionally documented here before becoming templates. Use these notes when a user asks for a slide that does not fit the decision tree cleanly.
 
@@ -21,14 +21,6 @@ Use for audience voting, quick quizzes, QR entry, and result bars.
 - Signature ingredients: narrow scan/action zone, larger question/result zone, numbered answers, clear status states.
 - Existing fallback: `scenario-matrix.html` for options, with custom interaction code.
 - Keep optional because real voting usually needs a host app, network state, and fallback copy for offline presentation.
-
-### Media Essay
-
-Use when one large image or video is the emotional center and text only frames the interpretation.
-
-- Signature ingredients: media-first composition, one short editorial title, one or two restrained captions, no crowded cards.
-- Existing fallback: `cover.html` for the stage and `quote-thesis.html` for the text hierarchy.
-- Promote when decks repeatedly need video, photography, or artifact review pages.
 
 ### Knowledge Constellation
 

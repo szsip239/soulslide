@@ -7,14 +7,17 @@ Use this reference when a slide needs a bitmap image, generated illustration, sc
 - Codex: when a required visual slot has no safe supplied asset, call `image2` or the active image generation tool such as `image_gen`. Do not finish with a text-only placeholder in a required visual slot.
 - Claude: use the configured image generation capability when available. If no such capability is available, produce the exact image prompt and mark the slot as draft-only until an asset is supplied.
 - Both providers: generated images must be saved or referenced as real assets in the slide, with stable dimensions and `object-fit` behavior.
+- Generate one focused image per slide or per sequence frame. Do not generate one giant collage and crop it into many unclear pieces.
+- For cover, closing, media-led, case, image-grid, or interaction-sequence pages, read `references/art-direction.md` first.
 
 ## Template Visual Needs
 
 | Template | Need | Guidance |
 |---|---|---|
-| `cover.html` | Optional | Use a 16:9 immersive background only when it makes the topic more concrete. Keep enough quiet area for the title. |
-| `closing.html` | Usually none | Keep it typographic unless the closing depends on a specific object, place, or artifact. |
+| `cover.html` | Recommended for high-visibility decks | Use a 16:9 immersive background, object crop, or material field when it makes the topic more concrete. Keep enough quiet area for the title. |
+| `closing.html` | Optional but useful | Keep it typographic unless a final artifact, place, object, or quiet stage can strengthen the closing sentence. |
 | `navigation.html` | Usually none | Use tabs, section cards, and player controls; do not add decorative art. |
+| `media-essay.html` | Required | One large image, video still, artifact photo, or generated frame is the slide's first read. |
 | `quote-thesis.html` | Usually none | Do not add decorative images. Use a visual only when the claim is about a tangible scene or artifact. |
 | `three-column.html` | Usually none | Prefer text hierarchy and accent rules. Small icons are optional, but avoid generic clip-art. |
 | `image-grid.html` | Required | Use 4-6 related images with the same crop rhythm and visual language. Generate a coherent set when no safe assets exist. |
@@ -24,13 +27,12 @@ Use this reference when a slide needs a bitmap image, generated illustration, sc
 | `category-overview.html` | Usually none | Use chips and labels. Generate icons only when the user explicitly asks for visual categories. |
 | `case-study.html` | Required | Prefer a real, shareable screenshot. If unavailable, generate an abstract interface mockup, architecture sketch, or product-like proof image. |
 | `scenario-matrix.html` | Usually none | Keep dense maps readable. Do not add decorative images that compete with cells. |
-| `interaction-sequence.html` | Required when media/demo-led | Use generated or supplied frames for each step when the sequence is about a gallery, video, demo, or before/after story. |
+| `interaction-sequence.html` | Required when media/demo-led | Use one generated or supplied frame per step when the sequence is about a gallery, video, demo, or before/after story. |
 
 Candidate templates from `template-coverage-notes.md`:
 
 - Profile intro: use a supplied portrait when available. Do not fabricate a real person's likeness; if no portrait is provided, generate a non-likeness workspace, object, or silhouette scene.
 - Live poll dashboard: usually no generated image; the QR/result area is interface structure.
-- Media essay: required visual. Generate a strong 16:9 editorial image if no safe media is provided.
 - Knowledge constellation: prefer structured HTML/CSS diagramming; use generated background only if it remains quiet.
 - Value ledger: usually no generated image.
 - Full system map: prefer structured diagramming; generate only if the map is intentionally illustrative.
@@ -48,13 +50,19 @@ Use prompts that specify:
 Example prompt shape:
 
 ```text
-Create a 16:9 editorial presentation image for [topic]. Warm paper-compatible palette, documentary but polished, strong single focal object, quiet negative space on the left for Chinese title text, no logos, no readable UI text, no decorative blobs, no stock-photo smile.
+Create one 16:9 editorial presentation image for [topic]. Warm paper-compatible palette, documentary but polished, strong single focal object, quiet negative space on the left for Chinese title text, no logos, no readable fake UI text, no decorative blobs, no stock-photo smile.
 ```
 
 For image grids, generate one cohesive set:
 
 ```text
 Create six related card images for [topic], same lighting, same crop rhythm, warm editorial palette, each with one clear object or scene, no text inside images, no logos, no stock-photo look.
+```
+
+For interaction sequences, generate separate frames:
+
+```text
+Create frame [n] of [total] for a clicker-driven slide sequence about [topic]. Keep the same palette, lens, object world, and crop rhythm as the other frames, but show [specific change]. No embedded text, no logos, no decorative blobs.
 ```
 
 ## HTML Integration

@@ -7,7 +7,8 @@
 3. Return a page-by-page outline table with recommended templates and open questions; wait for confirmation before development.
 4. Decide whether each slide is navigation, opening, closing, explanation, proof, map, process, or case.
 5. Pick a template from `layout-patterns.md`.
-6. Decide the information hierarchy before filling content.
+6. For cover, closing, media-led, case, image-grid, or interaction-sequence pages, read `references/art-direction.md` and define the visual/motion plan.
+7. Decide the information hierarchy before filling content.
 
 ## Content Compression
 
@@ -25,11 +26,12 @@ SoulSlide works best when the slide feels edited.
 2. Copy the chosen template.
 3. Update title, page number, section label, and footer.
 4. Replace placeholder content.
-5. Preserve the deck navigation/index player shell and home/previous/next/fullscreen controls.
-6. Keep existing CSS class names unless a new layout truly needs a new primitive.
-7. Add page-specific CSS only after checking whether `soulslide.css` already has the component.
-8. Run the font audit script.
-9. Screenshot the slide at 16:9 and inspect visually.
+5. Replace required visual placeholders with generated or supplied assets before final delivery.
+6. Preserve the deck navigation/index player shell and home/previous/next/fullscreen controls.
+7. Keep existing CSS class names unless a new layout truly needs a new primitive.
+8. Add page-specific CSS only after checking whether `soulslide.css` already has the component.
+9. Run the font audit script.
+10. Screenshot the slide at 16:9 and inspect visually.
 
 ## Adapting an Existing Slide
 
