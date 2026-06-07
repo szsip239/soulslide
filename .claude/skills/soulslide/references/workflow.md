@@ -25,7 +25,7 @@ SoulSlide works best when the slide feels edited.
 2. Copy the chosen template.
 3. Update title, page number, section label, and footer.
 4. Replace placeholder content.
-5. Preserve the deck navigation/status page and previous/next/fullscreen controls.
+5. Preserve the deck navigation/index player shell and home/previous/next/fullscreen controls.
 6. Keep existing CSS class names unless a new layout truly needs a new primitive.
 7. Add page-specific CSS only after checking whether `soulslide.css` already has the component.
 8. Run the font audit script.
@@ -33,7 +33,7 @@ SoulSlide works best when the slide feels edited.
 
 ## Adapting an Existing Slide
 
-1. Preserve working interaction and navigation code, including the deck navigation/status page and previous/next/fullscreen control bar.
+1. Preserve working interaction and navigation code, including the deck navigation/index player shell and home/previous/next/fullscreen control bar.
 2. Read the existing page's structural classes before editing.
 3. Do not normalize every page to the same template; preserve the page's narrative role.
 4. Improve hierarchy first: title > module title > body > metadata.
@@ -42,8 +42,8 @@ SoulSlide works best when the slide feels edited.
 ## Deck-Level Consistency
 
 - Use the same shell and footer language across related pages.
-- Keep the navigation/status page style stable after the user confirms it.
-- Keep previous/next/fullscreen controls available during playback.
+- Keep the navigation/index page style stable after the user confirms it.
+- Keep home/previous/next/fullscreen controls available during playback.
 - Keep page numbers in Playfair Display.
 - Use one accent color family; red/blue/green are secondary semantic accents, not new themes.
 - Do not make every page a grid. Alternate dense pages with editorial breathing pages.

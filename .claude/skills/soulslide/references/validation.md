@@ -50,8 +50,9 @@ Check:
 
 For full decks:
 
-- Navigation/status page is present and visually matches the deck.
-- Previous, next, and fullscreen controls remain visible and clickable.
+- Navigation/index page is present and follows `references/navigation-style.md`.
+- Previous, next, fullscreen, and home controls remain visible during playback and clickable.
+- The control bar is the bottom-left dark rounded player bar, not a bottom-right group of text buttons.
 - ArrowRight/PageDown/Space goes next; ArrowLeft/PageUp goes previous.
 
 For sequence slides:

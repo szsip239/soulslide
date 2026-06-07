@@ -15,7 +15,7 @@ Each entry maps:
 |---|---|---|---|
 | Opening / title-led stage | `assets/templates/cover.html` | `assets/golden/cover.png` | Sparse metadata, large title, paper stage |
 | Closing / final statement | `assets/templates/closing.html` | `assets/golden/closing.png` | Low-density final line, dark close |
-| Deck navigation/status | `assets/templates/navigation.html` | `assets/golden/navigation.png` | Section map, page status, playback controls |
+| Deck navigation/index shell | `assets/templates/navigation.html` | `assets/golden/navigation.png` | Tabs, masthead, hero strip, section card grid, player shell with bottom-left controls during playback |
 | Single strong judgment | `assets/templates/quote-thesis.html` | `assets/golden/quote-thesis.png` | Dark thesis block + three support notes |
 | Three comparable groups | `assets/templates/three-column.html` | `assets/golden/three-column.png` | Equal columns, one dark focus, bottom caveat |
 | Visual evidence cards | `assets/templates/image-grid.html` | `assets/golden/image-grid.png` | Fixed image rows, title/body/source hierarchy |

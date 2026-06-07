@@ -36,7 +36,7 @@ Use this gate after choosing a template and before final screenshot approval. It
 
 - Every referenced image, video, or font loads in the target environment.
 - Important interactions work by keyboard or presenter clicker.
-- Full decks keep the navigation/status page and previous/next/fullscreen controls.
+- Full decks keep the navigation/index player shell and bottom-left home/previous/next/fullscreen controls.
 - A sequence slide releases deck navigation after its internal sequence ends.
 
 ## 6. Shareability

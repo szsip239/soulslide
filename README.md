@@ -43,7 +43,7 @@ After you approve the outline:
 
 ```text
 Use SoulSlide to build pages [range] from the approved outline.
-Generate the navigation/status page first and wait for confirmation before building the rest.
+Generate the navigation/index page first and wait for confirmation before building the rest.
 Follow the recommended template for each page.
 Keep one thesis per page.
 Use supplied assets where available.
@@ -56,7 +56,7 @@ For customer alignment, agree on this table before production:
 
 | Page | Thesis | Recommended template | Content blocks | Visual asset | Interaction | Status | Open question |
 |---|---|---|---|---|---|---|---|
-| 00 | How the audience navigates the deck and sees progress | `navigation.html` | section list, page status, controls | not needed | prev/next/fullscreen | generate first | confirm page grouping |
+| 00 | How the audience navigates the deck and sees progress | `navigation.html` | tabs, sections, page cards, player controls | not needed | home/prev/next/fullscreen | generate first | confirm page grouping |
 | 01 | What the audience should remember | `cover.html` | title, subtitle, speaker/event | optional background | none | planned | confirm title |
 | 02 | One claim, comparison, process, or proof point | template name | 3-5 blocks max | supplied/generated/not needed | none/clicker | planned | missing data |
 
@@ -70,7 +70,7 @@ Core template families:
 
 - `cover.html` — opening page, chapter opener, title-led stage
 - `closing.html` — final page or closing call-to-action
-- `navigation.html` — deck index, development status page, playback controls
+- `navigation.html` — deck index, lightweight development status, playback entry, bottom-left controls
 - `quote-thesis.html` — one strong judgment or turning-point statement
 - `three-column.html` — conditions, benefits, requirements, comparisons
 - `image-grid.html` — image-led evidence cards with consistent crop rhythm
@@ -95,7 +95,8 @@ Core template families:
 │   │   └── golden/*.png               # desensitized reference screenshots
 │   ├── references/
 │   │   ├── briefing.md                # prompt and customer brief patterns
-│   │   ├── deck-shell.md              # navigation/status page and controls
+│   │   ├── deck-shell.md              # navigation/index page and controls
+│   │   ├── navigation-style.md        # fixed index/player shell visual reference
 │   │   ├── design-system.md           # visual language and typography rules
 │   │   ├── layout-patterns.md         # template catalog
 │   │   ├── template-decision-tree.md  # layout selection rules
@@ -134,7 +135,8 @@ Install both if you want the same slide style available in both agents.
 
 - `references/design-system.md` — typography, palette, spacing, and anti-patterns
 - `references/briefing.md` — prompt patterns and page-by-page customer brief structure
-- `references/deck-shell.md` — navigation/status page and playback control rules
+- `references/deck-shell.md` — navigation/index page and playback control rules
+- `references/navigation-style.md` — fixed visual reference for the deck index/player shell
 - `references/layout-patterns.md` — categorized template grammar
 - `references/template-decision-tree.md` — direct template selection rules
 - `references/template-coverage-notes.md` — high-flavor patterns not yet promoted to core templates

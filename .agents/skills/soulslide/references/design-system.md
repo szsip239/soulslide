@@ -117,7 +117,7 @@ Do not render `37.5万+` as one bold Chinese text run. Use a structured metric:
 ## Interaction
 
 - Presenter-clicker and keyboard paths matter more than mouse-only polish.
-- Full decks should keep a navigation/status page plus a visible previous / next / fullscreen control bar.
+- Full decks should keep a navigation/index player shell that follows `references/navigation-style.md`, plus a bottom-left home / previous / next / fullscreen control bar.
 - Normal navigation: ArrowRight/PageDown/Space next, ArrowLeft/PageUp previous.
 - Forced sequence slides should expose `window.__seqHandleNav(key)` and set `window.__seqBlockNav` while the sequence must consume navigation.
 - Release `__seqBlockNav` when the sequence is complete.

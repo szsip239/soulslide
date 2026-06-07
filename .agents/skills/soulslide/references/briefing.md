@@ -33,7 +33,7 @@ When the user provides an incomplete idea, ask concise questions that unlock the
 - Source material: rough outline, notes, reference docs, links, screenshots, data, prior slides.
 - Local files: ask the user to provide file paths for any outline, reference content, images, screenshots, videos, or design assets.
 - Constraints: public/private, must-avoid claims, brand tone, deadline, delivery format, and whether generated images are allowed.
-- Interaction: whether the deck needs a navigation/status page, clicker sequence, demo reveal, or embedded media.
+- Interaction: whether the deck needs a navigation/index player shell, clicker sequence, demo reveal, or embedded media.
 
 Do not ask every possible question. Ask the smallest set that changes the outline, recommended templates, or asset plan.
 
@@ -53,7 +53,7 @@ Use this structure for customer alignment:
 
 | Page | Thesis | Recommended template | Content blocks | Visual asset | Interaction | Status | Open question |
 |---|---|---|---|---|---|---|---|
-| 00 | How the audience navigates the deck and sees development progress | `navigation.html` | section list, page status, controls | not needed | prev/next/fullscreen | generate first | confirm page grouping |
+| 00 | How the audience navigates the deck and sees development progress | `navigation.html` | tabs, section cards, page status, player controls | not needed | home/prev/next/fullscreen | generate first | confirm page grouping |
 | 01 | One sentence the audience should remember | `cover.html` | title, subtitle, speaker/event | optional background | none | planned | confirm title |
 | 02 | One claim, comparison, process, or proof point | template name | 3-5 blocks max | supplied/generated/not needed | none/clicker | planned | missing data |
 
@@ -62,7 +62,7 @@ Rules:
 - One page gets one thesis.
 - The template is chosen by the page's job, not by available content volume.
 - Mark visuals as supplied, generated, not needed, or draft-only.
-- Include a `navigation.html` row for multi-page decks unless the user explicitly rejects a navigation/status page.
+- Include a `navigation.html` row for multi-page decks unless the user explicitly rejects a navigation/index player shell.
 - Mark page status as planned, draft, needs review, or final.
 - Do not start HTML for a full deck until the page plan is accepted or the user explicitly asks to proceed without approval.
 
@@ -70,7 +70,7 @@ Rules:
 
 - Opening or chapter title: `cover.html`
 - Final line or call-to-action: `closing.html`
-- Deck navigation/status hub: `navigation.html`
+- Deck navigation/index player shell: `navigation.html`
 - One memorable stance: `quote-thesis.html`
 - Three comparable groups: `three-column.html`
 - Evidence cards with images: `image-grid.html`
@@ -89,7 +89,7 @@ Once the page plan is approved, use this:
 ```text
 Use SoulSlide to build pages [range] from the approved outline.
 
-Generate the navigation/status page first and wait for confirmation before building the rest.
+Generate the navigation/index page first and wait for confirmation before building the rest.
 Follow the recommended template for each page.
 Keep one thesis per page.
 Use supplied assets where available.
@@ -119,4 +119,4 @@ Return a page-by-page change plan before editing.
 - If the user asks for one slide, build directly after choosing the template.
 - If key inputs are missing, ask only the few questions that change layout or content strategy.
 - If the user says to proceed, make reasonable assumptions and list them briefly.
-- For a complete deck, generate and confirm the navigation/status page before the remaining content pages.
+- For a complete deck, generate and confirm the navigation/index page before the remaining content pages.

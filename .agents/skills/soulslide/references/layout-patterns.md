@@ -8,7 +8,7 @@ This catalog distills reusable editorial slide layout grammar. Use it to pick a 
 |---|---|---|
 | Cover Stage | `assets/templates/cover.html` | Opening page, talk title, big thesis, speaker/event metadata |
 | Closing Signature | `assets/templates/closing.html` | Final page, call-to-action, memorable closing line |
-| Navigation Status | `assets/templates/navigation.html` | Deck index, development status, presentation controls |
+| Navigation Index | `assets/templates/navigation.html` | Deck index, lightweight development status, presentation player shell |
 | Quote Thesis | `assets/templates/quote-thesis.html` | One strong argument, turning point, field note, or quote-led claim |
 | Three Column | `assets/templates/three-column.html` | Requirements, benefits, principles, comparisons, signup pages |
 | Image Grid | `assets/templates/image-grid.html` | 4-6 ideas with visual evidence and citations |
@@ -62,25 +62,29 @@ Use for:
 - Final slide.
 - Section landing after a complex narrative.
 
-## 2.5 Navigation Status
+## 2.5 Navigation Index
 
 Use this for the first generated page of a full deck after the page plan is confirmed.
 
 Structure:
 
-- Left panel explains deck purpose and current build state.
-- Right list maps sections/pages to templates and statuses.
-- Floating control bar exposes previous, next, and fullscreen actions.
+- Top tabs for related decks or sections.
+- Masthead with left volume marker, centered large serif title, highlighted keyword, and right italic tagline.
+- Hero strip with vertical red / blue / mustard rail, presentation-mode label, keyboard hints, and dark CTA.
+- Section headers with roman numeral, Chinese label, italic English subtitle, and rule line.
+- Three-column card grid maps pages to templates and statuses.
+- Bottom-left dark control bar exposes home, previous, next, fullscreen, and keyboard help.
 
 Use for:
 
 - Deck index.
-- Development progress dashboard.
+- Lightweight development progress.
 - Presentation entry point.
 
 Avoid:
 
 - Treating it as a decorative title page.
+- Rebuilding it as a generic status slide with a left panel and right list.
 - Removing the control bar after content pages are built.
 
 ## 3. Three Column
