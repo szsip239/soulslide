@@ -12,72 +12,164 @@
   <section class="ss-title-row">
     <div class="ss-title-num">08</div>
     <h1 class="ss-title-main">顺序交互：让翻页笔先推进 <span class="ss-mark">页内讲述</span></h1>
-    <div class="ss-kicker">用于必须按顺序展示的图片、视频、demo 或前后对比。</div>
+    <div class="ss-kicker">用于多张图片、视频片段、demo 帧或前后对比。媒体原位播放，不弹出放大层。</div>
   </section>
   <section class="ss-main ss-seq-grid">
-    <button class="ss-seq-preview" id="openSeq">open sequence</button>
+    <section class="ss-seq-stage" aria-label="Media sequence">
+      <div class="ss-seq-tabs" role="tablist" aria-label="Sequence frames">
+        <button class="ss-seq-tab active" type="button" data-seq-jump="0">01 图片总览</button>
+        <button class="ss-seq-tab" type="button" data-seq-jump="1">02 细节证据</button>
+        <button class="ss-seq-tab" type="button" data-seq-jump="2">03 视频片段</button>
+      </div>
+      <div class="ss-seq-preview" id="seqPreview">
+        <img id="seqImage" alt="" hidden>
+        <video id="seqVideo" controls playsinline muted preload="metadata" hidden></video>
+        <div class="ss-seq-placeholder" id="seqPlaceholder">
+          <span>image frame 01</span>
+          <small>replace with supplied image</small>
+        </div>
+      </div>
+      <div class="ss-seq-caption" id="seqCaption">第 1 帧：放一张真实图片、截图或生成图，作为这组素材的入口。</div>
+    </section>
     <section class="ss-seq-list">
-      <div class="ss-seq-item"><div class="ss-no">01</div><p>第一次右键打开序列层，展示第一步。</p></div>
-      <div class="ss-seq-item"><div class="ss-no">02</div><p>继续右键推进页内步骤，而不是直接翻到下一页。</p></div>
-      <div class="ss-seq-item"><div class="ss-no">03</div><p>序列结束后释放父播放器导航。</p></div>
+      <div class="ss-seq-item"><div class="ss-no">01</div><p>页面出现后，翻页键先推进页内媒体序列。</p></div>
+      <div class="ss-seq-item"><div class="ss-no">02</div><p>多图播放时，上方标签同步高亮当前图片或视频。</p></div>
+      <div class="ss-seq-item"><div class="ss-no">03</div><p>到视频帧时原位播放，保留浏览器 controls 和键盘路径。</p></div>
+      <div class="ss-seq-item"><div class="ss-no">04</div><p>序列完成后释放父播放器，再进入下一页。</p></div>
     </section>
   </section>
-  <footer class="ss-foot"><span>Interaction sequence</span><span class="ss-line">Clicker-first interaction for required reveal order.</span><span>08</span></footer>
+  <footer class="ss-foot"><span>Interaction sequence</span><span class="ss-line">Clicker-first media sequence with active frame labels.</span><span>08</span></footer>
 </main>
-<div class="ss-overlay" id="seqOverlay">
-  <div class="ss-overlay-card">
-    <h2 id="seqTitle">Step 01</h2>
-    <p id="seqBody">这里替换为第一张大图、视频说明或 demo 步骤。按右键进入下一步，按左键返回。</p>
-  </div>
-</div>
 <script>
 (() => {
-  const overlay = document.getElementById('seqOverlay');
-  const title = document.getElementById('seqTitle');
-  const body = document.getElementById('seqBody');
-  const steps = [
-    ['Step 01', '第一步：打开需要讲解的图像、视频或界面。'],
-    ['Step 02', '第二步：解释关键变化，保持听众注意力在同一个上下文。'],
-    ['Step 03', '第三步：总结这组素材的结论，然后释放翻页。']
+  const tabs = [...document.querySelectorAll('[data-seq-jump]')];
+  const image = document.getElementById('seqImage');
+  const video = document.getElementById('seqVideo');
+  const placeholder = document.getElementById('seqPlaceholder');
+  const caption = document.getElementById('seqCaption');
+  const frames = [
+    {
+      type: 'image',
+      label: '图片总览',
+      src: '',
+      alt: 'Replace with overview image',
+      placeholder: ['image frame 01', 'replace with supplied image'],
+      caption: '第 1 帧：放一张真实图片、截图或生成图，作为这组素材的入口。'
+    },
+    {
+      type: 'image',
+      label: '细节证据',
+      src: '',
+      alt: 'Replace with detail image',
+      placeholder: ['image frame 02', 'same crop rhythm'],
+      caption: '第 2 帧：切换到细节图，解释变化、证据或界面状态。'
+    },
+    {
+      type: 'video',
+      label: '视频片段',
+      src: '',
+      poster: '',
+      placeholder: ['video frame 03', 'serve mp4 over HTTP for reliable playback'],
+      caption: '第 3 帧：替换为本地 mp4/webm，翻到这一帧时在原区域播放。'
+    }
   ];
-  let open = false;
   let index = 0;
-  function render() {
-    const step = steps[index];
-    title.textContent = step[0];
-    body.textContent = step[1];
-    overlay.classList.toggle('active', open);
-    window.__seqBlockNav = open && index < steps.length - 1;
+  let done = false;
+  function setBlock() {
+    window.__seqBlockNav = !done;
   }
-  function openSeq() { open = true; index = 0; render(); }
-  function closeSeq() { open = false; window.__seqBlockNav = false; render(); }
+  function pauseVideo() {
+    try { video.pause(); } catch (_) {}
+  }
+  function showPlaceholder(frame) {
+    placeholder.hidden = false;
+    placeholder.innerHTML = `<span>${frame.placeholder[0]}</span><small>${frame.placeholder[1]}</small>`;
+  }
+  function render(autoPlay = false) {
+    const frame = frames[index];
+    pauseVideo();
+    tabs.forEach((tab, i) => {
+      const active = i === index;
+      tab.classList.toggle('active', active);
+      tab.setAttribute('aria-selected', active ? 'true' : 'false');
+    });
+    image.hidden = true;
+    video.hidden = true;
+    placeholder.hidden = true;
+    caption.textContent = frame.caption;
+    if (frame.type === 'video') {
+      if (frame.src) {
+        video.hidden = false;
+        if (video.getAttribute('src') !== frame.src) video.src = frame.src;
+        if (frame.poster) video.poster = frame.poster;
+        if (autoPlay) {
+          try { video.currentTime = 0; } catch (_) {}
+          video.play().catch(() => {});
+        }
+      } else {
+        showPlaceholder(frame);
+      }
+    } else if (frame.src) {
+      image.hidden = false;
+      image.src = frame.src;
+      image.alt = frame.alt || frame.label;
+    } else {
+      showPlaceholder(frame);
+    }
+    setBlock();
+  }
   function normalize(key) {
     if (key === 'ArrowRight' || key === 'PageDown' || key === ' ') return 'next';
     if (key === 'ArrowLeft' || key === 'PageUp') return 'prev';
-    if (key === 'Escape') return 'close';
+    if (key === 'Escape') return 'done';
     return null;
   }
   function handleNav(key) {
     const action = normalize(key);
     if (!action) return false;
-    if (action === 'close') { closeSeq(); return true; }
-    if (!open && action === 'next') { openSeq(); return true; }
-    if (!open) return false;
+    if (action === 'done') {
+      done = true;
+      pauseVideo();
+      setBlock();
+      return true;
+    }
     if (action === 'next') {
-      if (index < steps.length - 1) { index += 1; render(); return true; }
-      closeSeq();
+      if (index < frames.length - 1) {
+        index += 1;
+        done = false;
+        render(true);
+        return true;
+      }
+      done = true;
+      pauseVideo();
+      setBlock();
       return false;
     }
     if (action === 'prev') {
-      if (index > 0) { index -= 1; render(); return true; }
-      closeSeq();
-      return true;
+      if (done) {
+        done = false;
+        index = frames.length - 1;
+        render(false);
+        return true;
+      }
+      if (index > 0) {
+        index -= 1;
+        render(false);
+        return true;
+      }
+      return false;
     }
     return false;
   }
-  document.getElementById('openSeq').addEventListener('click', openSeq);
+  tabs.forEach((tab) => {
+    tab.addEventListener('click', () => {
+      index = Number(tab.dataset.seqJump) || 0;
+      done = false;
+      render(true);
+    });
+  });
   window.__seqHandleNav = handleNav;
-  window.__seqBlockNav = false;
+  render(false);
   window.addEventListener('keydown', (event) => {
     if (handleNav(event.key)) {
       event.preventDefault();
@@ -88,4 +180,3 @@
 </script>
 </body>
 </html>
-

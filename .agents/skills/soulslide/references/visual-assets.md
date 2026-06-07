@@ -29,7 +29,7 @@ Use this reference when a slide needs a bitmap image, generated illustration, sc
 | `category-overview.html` | Usually none | Use chips and labels. Generate icons only when the user explicitly asks for visual categories. |
 | `case-study.html` | Required | Prefer a real, shareable screenshot. If unavailable, generate an abstract interface mockup, architecture sketch, or product-like proof image. |
 | `scenario-matrix.html` | Usually none | Keep dense maps readable. Do not add decorative images that compete with cells. |
-| `interaction-sequence.html` | Required when media/demo-led | Use one generated or supplied frame per step when the sequence is about a gallery, video, demo, or before/after story. |
+| `interaction-sequence.html` | Required when media/demo-led | Use one generated or supplied frame per step when the sequence is about a gallery, video, demo, or before/after story. For multiple images or video, read `references/media-sequence.md`; keep media in the slide stage and use active frame labels. |
 
 Candidate templates from `template-coverage-notes.md`:
 
@@ -65,9 +65,11 @@ For interaction sequences, generate separate frames:
 Create frame [n] of [total] for a clicker-driven slide sequence about [topic]. Keep the same palette, lens, object world, and crop rhythm as the other frames, but show [specific change]. No embedded text, no logos, no decorative blobs.
 ```
 
+For video sequences, do not generate a still image as a substitute unless the user only needs a poster frame. Keep the mp4/webm file as a real asset and verify through HTTP.
+
 ## HTML Integration
 
-- Replace placeholder text inside `.ss-image-box`, `.ss-shot-box`, or `.ss-seq-preview` with an `<img>` element.
+- Replace placeholder text inside `.ss-image-box`, `.ss-shot-box`, or `.ss-seq-preview` with an `<img>` or `<video>` element.
 - Use `object-fit: cover` for photographic/card images and `object-fit: contain` for UI screenshots or diagrams.
 - Keep all image groups at fixed height or aspect ratio.
 - If an image is draft-only, label it visibly in the working file and remove the label before final delivery.

@@ -12,6 +12,7 @@ SoulSlide is an agent skill for creating editorial HTML presentation slides with
 - Navigation/index page: decks start with a reusable status-and-playback shell, including previous, next, home, and fullscreen controls.
 - Cover and closing pages: templates now include generated visual assets and light breathing/floating motion rules for key stage pages.
 - Profile and system-map pages: reusable templates now cover person-as-proof intros and inspectable full-system canvases.
+- Media sequences: clicker-driven image/video playback stays inside the slide stage, with active frame labels and mp4 HTTP serving support.
 - Aesthetic review: high-visibility slides use a one-sentence design read and a composition anchor before layout work.
 - Self-hosted typography: templates load bundled WOFF2 fallbacks from the repository and no longer depend on Google Fonts.
 - Expanded audit: the existing slide audit checks readable type plus remote-font and copy/style guardrails.
@@ -27,6 +28,7 @@ Use SoulSlide when you want an AI coding agent to:
 - improve profile, system-map, cover, closing, and key visual pages with explicit composition anchors
 - keep title, body, quote, citation, and metadata hierarchy consistent
 - generate or request real visual assets where a template requires them
+- show multiple images or videos in sequence using presenter keys, without default enlargement
 - improve cover, closing, and key visual pages with explicit art direction and light motion rules
 - render consistently with bundled local WOFF2 font fallbacks instead of remote font links
 - validate font size, image rhythm, clicker behavior, and 16:9 screenshot quality
@@ -98,6 +100,7 @@ Core template families:
 - `case-study.html` — product, project, automation, or skill proof page
 - `scenario-matrix.html` — dense business scene map or portfolio matrix
 - `interaction-sequence.html` — clicker-first gallery, demo reveal, before/after sequence
+- media/video sequences use the same `interaction-sequence.html` template with active labels and HTTP-served mp4 assets
 
 ## Architecture
 
@@ -120,12 +123,15 @@ Core template families:
 │   │   ├── navigation-style.md        # fixed index/player shell visual reference
 │   │   ├── design-system.md           # visual language and typography rules
 │   │   ├── layout-patterns.md         # template catalog
+│   │   ├── media-sequence.md          # clicker-driven image/video sequence rules
 │   │   ├── template-decision-tree.md  # layout selection rules
 │   │   ├── golden-examples.md         # sample-to-template mapping
 │   │   ├── visual-assets.md           # image generation and asset rules
 │   │   ├── quality-gate.md            # lightweight slide audit checklist
 │   │   └── validation.md              # font and screenshot checks
-│   └── scripts/slide-font-audit.mjs   # readable type + lightweight quality audit
+│   └── scripts/
+│       ├── slide-font-audit.mjs       # readable type + lightweight quality audit
+│       └── serve-media.mjs            # local HTTP media server with mp4 Range support
 ├── .claude/skills/soulslide/          # Claude-compatible copy
 ├── scripts/sync-claude-skill.mjs      # refreshes Claude copy from Codex source
 ├── assets/readme/                     # README hero and gallery images
@@ -161,6 +167,7 @@ Install both if you want the same slide style available in both agents.
 - `references/deck-shell.md` — navigation/index page and playback control rules
 - `references/navigation-style.md` — fixed visual reference for the deck index/player shell
 - `references/layout-patterns.md` — categorized template grammar
+- `references/media-sequence.md` — image/video sequence behavior, active labels, and mp4 serving
 - `references/template-decision-tree.md` — direct template selection rules
 - `references/template-coverage-notes.md` — high-flavor patterns not yet promoted to core templates
 - `references/visual-assets.md` — when to use supplied assets, generated images, or no image

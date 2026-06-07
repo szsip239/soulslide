@@ -63,6 +63,14 @@ For sequence slides:
 - ArrowLeft/PageUp can step backward when appropriate.
 - Parent deck navigation resumes after the sequence completes.
 - `window.__seqBlockNav` is released at the end.
+- For multiple-image sequences, active tabs or labels update on every internal frame.
+- For video sequences, serve the deck through HTTP and confirm mp4 playback, pause, and release behavior.
+
+Use the bundled Range-capable media server for local video checks:
+
+```bash
+node .agents/skills/soulslide/scripts/serve-media.mjs --root path/to/deck --port 18189
+```
 
 ## HTTP Check
 

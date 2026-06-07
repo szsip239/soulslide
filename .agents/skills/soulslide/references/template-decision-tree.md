@@ -67,9 +67,10 @@ Choose the template by the slide's job, not by the content you happen to have.
     - Use `assets/templates/scenario-matrix.html`.
     - Use this for dense maps where every cell is a conversation starter.
 
-16. Does the slide require a forced reveal order, gallery, before/after sequence, or demo walkthrough?
+16. Does the slide require a forced reveal order, image-by-image playback, video playback, gallery, before/after sequence, or demo walkthrough?
     - Use `assets/templates/interaction-sequence.html`.
     - Ensure `window.__seqHandleNav(key)` and `window.__seqBlockNav` are wired.
+    - For videos or multiple images, read `references/media-sequence.md`.
 
 17. Does the slide feel like a live poll, knowledge constellation, or value ledger?
     - Check `references/template-coverage-notes.md`.

@@ -15,7 +15,7 @@ SoulSlide creates editorial HTML slides: projector-first, warm paper palette, st
 4. After confirmation, read `references/deck-shell.md` and `references/navigation-style.md`, then generate the navigation/index page first from `assets/templates/navigation.html`; ask the user to confirm that page before building the rest of the deck.
 5. Read `references/design-system.md` before visual work. For cover, closing, profile, system-map, media-led, or other high-visibility pages, also read `references/aesthetic-review.md` and write a one-sentence design read before selecting the layout.
 6. Pick the closest layout using `references/template-decision-tree.md`; copy or adapt the matching file from `assets/templates/`. If the request does not fit any leaf cleanly, check `references/template-coverage-notes.md` before inventing a new structure.
-7. For cover, closing, media-led, case, image-grid, or interaction-sequence pages, read `references/art-direction.md` before visual work. If the selected template has required or useful bitmap assets, read `references/visual-assets.md`. Codex must call `image2` or the active image generation tool for missing required visuals instead of leaving final text placeholders.
+7. For cover, closing, media-led, case, image-grid, or interaction-sequence pages, read `references/art-direction.md` before visual work. If the selected template has required or useful bitmap assets, read `references/visual-assets.md`. For video or multiple images shown by clicker, read `references/media-sequence.md`. Codex must call `image2` or the active image generation tool for missing required visuals instead of leaving final text placeholders.
 8. Link `assets/soulslide.css` or copy its relevant variables/components into the target project.
 9. Write content for one clear idea per slide. Preserve hierarchy: page title > module title > body > source/metadata.
 10. Preserve the deck navigation/index player shell and the home/previous/next/fullscreen control bar across presentation pages.
@@ -38,7 +38,7 @@ SoulSlide creates editorial HTML slides: projector-first, warm paper palette, st
 - Portfolio, project family, practice categories: `category-overview.html`
 - Product/project/case with screenshots and capabilities: `case-study.html` (required proof visual)
 - Industry or enterprise scenario matrix: `scenario-matrix.html`
-- Forced presenter-clicker sequence or gallery: `interaction-sequence.html` (required visual frames when the sequence is media/demo-led)
+- Forced presenter-clicker sequence, image carousel, video frame, or gallery: `interaction-sequence.html` (required visual frames when the sequence is media/demo-led)
 - Special high-flavor structures not yet promoted to core templates: see `references/template-coverage-notes.md`
 
 ## Non-Negotiables
@@ -51,6 +51,7 @@ SoulSlide creates editorial HTML slides: projector-first, warm paper palette, st
 - Do not add a tiny English eyebrow to every page, repeatedly use "不是 X，而是 Y", or rely on empty buzzwords such as `赋能`, `重塑`, `无缝`, `下一代`, `革命性`.
 - Do not ship a slide that fails the lightweight quality gate in `references/quality-gate.md`.
 - Do not make key presentation steps mouse-only. Important interactions must work with keyboard or presenter clicker.
+- Do not enlarge image or video sequences by default; keep media inside the slide stage and use active frame labels unless the user asks for a lightbox.
 - Do not turn the deck navigation page into a generic slide or remove previous/next/fullscreen controls when working on a complete presentation.
 
 ## Validation

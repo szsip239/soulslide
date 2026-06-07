@@ -44,6 +44,9 @@ Use this gate after choosing a template and before final screenshot approval. It
 - Important interactions work by keyboard or presenter clicker.
 - Full decks keep the navigation/index player shell and bottom-left home/previous/next/fullscreen controls.
 - A sequence slide releases deck navigation after its internal sequence ends.
+- Image/video sequence slides keep media inside the slide stage by default; no automatic enlarged lightbox.
+- Multiple-image sequences show active frame labels with visible border and background highlight.
+- Video slides are verified over HTTP with mp4 Range support, not only from `file://`.
 
 ## 6. Shareability
 

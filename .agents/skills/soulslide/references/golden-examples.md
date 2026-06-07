@@ -28,7 +28,7 @@ Each entry maps:
 | Portfolio/categories | `assets/templates/category-overview.html` | `assets/golden/category-overview.png` | Four families with short project labels |
 | Concrete case | `assets/templates/case-study.html` | `assets/golden/case-study.png` | Visual proof left, capability stack right |
 | Many business scenes | `assets/templates/scenario-matrix.html` | `assets/golden/scenario-matrix.png` | Legend + dense but organized scene cells |
-| Required reveal/demo | `assets/templates/interaction-sequence.html` | `assets/golden/interaction-sequence.png` | Preview + clicker-first sequence list |
+| Required reveal/demo/media playback | `assets/templates/interaction-sequence.html` | `assets/golden/interaction-sequence.png` | In-slide media stage, active frame labels, clicker-first sequence list |
 
 ## How To Use
 

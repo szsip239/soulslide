@@ -21,7 +21,7 @@ This catalog distills reusable editorial slide layout grammar. Use it to pick a 
 | Category Overview | `assets/templates/category-overview.html` | Project families, capability categories, practice maps, section overview |
 | Case Study | `assets/templates/case-study.html` | Product/project page with screenshot, capabilities, build path |
 | Scenario Matrix | `assets/templates/scenario-matrix.html` | Enterprise scene map, sector/function matrix, portfolio overview |
-| Interaction Sequence | `assets/templates/interaction-sequence.html` | Presenter-clicker sequence, gallery, demo reveal |
+| Interaction Sequence | `assets/templates/interaction-sequence.html` | Presenter-clicker media sequence, image-by-image playback, video frame, demo reveal |
 
 For required, optional, and intentionally absent image slots, read `references/visual-assets.md`. Do not add bitmap art to structural templates just because the slide feels empty.
 
@@ -327,21 +327,27 @@ Source inspiration: speaker photo gallery, TeamClaw build sequence, video reveal
 
 Structure:
 
-- Visible thumbnails or one primary preview.
-- Hidden overlay controlled by keyboard/clicker.
+- One stable media stage inside the slide.
+- Optional image/video tabs above or below the stage.
+- Active tab uses border and background highlight.
+- Images and videos swap in place; no automatic lightbox or enlarged modal.
 - `window.__seqHandleNav(key)` handles progression.
 - `window.__seqBlockNav` blocks parent navigation until sequence is done.
+- For video, serve mp4 over HTTP and keep browser controls visible.
 
 Use for:
 
 - Required reveal order.
 - Before/after images.
 - Demo walkthroughs.
+- Multiple images shown by clicker.
+- A video frame that should play before moving to the next slide.
 
 Avoid:
 
 - Making the talk depend on hover.
 - Letting a generic lightbox hijack the sequence.
+- Enlarging images or videos unless the user explicitly asks for that behavior.
 
 ## Choosing a Pattern
 

@@ -11,6 +11,7 @@ A full SoulSlide deck should keep:
 - A bottom-left previous / next / fullscreen control bar for presentation playback.
 - Keyboard navigation: ArrowRight/PageDown/Space for next, ArrowLeft/PageUp for previous.
 - Sequence-slide compatibility: if `window.__seqHandleNav(key)` consumes a key, the deck shell must not also change pages.
+- Media sequence compatibility: image and video sequences keep media inside the slide stage and use active labels; the shell must not turn them into overlays.
 
 ## Navigation Page First
 
@@ -59,6 +60,8 @@ if (typeof window.__seqHandleNav === 'function' && window.__seqHandleNav(event.k
 }
 if (window.__seqBlockNav) return;
 ```
+
+For image/video sequence slides, this means ArrowRight/PageDown/Space advances the internal media first. Only after the slide releases `window.__seqBlockNav = false` should the shell move to the next page.
 
 ## Do Not Remove
 

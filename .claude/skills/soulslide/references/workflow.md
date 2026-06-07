@@ -9,7 +9,8 @@
 5. For high-visibility slides, read `references/aesthetic-review.md` and write the one-sentence design read plus one composition anchor.
 6. Pick a template from `layout-patterns.md`.
 7. For cover, closing, media-led, profile, case, image-grid, full-system-map, or interaction-sequence pages, read `references/art-direction.md` when visuals or motion matter, then define the visual plan.
-8. Decide the information hierarchy before filling content.
+8. For video or multiple images controlled by the clicker, read `references/media-sequence.md` and keep the media inside the slide stage with active frame labels.
+9. Decide the information hierarchy before filling content.
 
 ## Content Compression
 
@@ -33,6 +34,7 @@ SoulSlide works best when the slide feels edited.
 8. Add page-specific CSS only after checking whether `soulslide.css` already has the component.
 9. Run the SoulSlide audit script.
 10. Screenshot the slide at 16:9 and inspect visually.
+11. For mp4/webm/mov/m4v, verify through the bundled media server or another HTTP server with video MIME and Range support.
 
 ## Adapting an Existing Slide
 

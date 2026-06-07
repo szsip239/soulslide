@@ -135,6 +135,7 @@ Do not render `37.5万+` as one bold Chinese text run. Use a structured metric:
 - Normal navigation: ArrowRight/PageDown/Space next, ArrowLeft/PageUp previous.
 - Forced sequence slides should expose `window.__seqHandleNav(key)` and set `window.__seqBlockNav` while the sequence must consume navigation.
 - Release `__seqBlockNav` when the sequence is complete.
+- For image/video sequences, keep media in the slide stage, advance it with the same keys, and highlight the active frame label. Do not enlarge media by default.
 
 ## Anti-Patterns
 
