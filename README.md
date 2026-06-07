@@ -1,181 +1,181 @@
 # soulslide
 
-[English](README.md) | [简体中文](README.zh-CN.md)
+简体中文 | [English](README.en.md)
 
-![SoulSlide hero](assets/readme/hero.png)
+![SoulSlide 主图](assets/readme/hero.png)
 
-SoulSlide is an agent skill for creating editorial HTML presentation slides with a consistent visual language: projector-first 16:9 composition, warm paper palette, strong Chinese typography, restrained cards, and reusable slide templates for Codex and Claude.
+SoulSlide 是一个面向 Codex 和 Claude 的 agent skill，用于生成具有一致视觉语言的 HTML 演示页：16:9 投影优先、暖纸质感、强中文字体层级、克制卡片，以及可复用的页面模板。
 
-## Current Highlights
+## 当前亮点
 
-- Interview-first workflow: the agent should gather audience, goal, materials, assets, constraints, and page count before writing HTML.
-- Navigation/index page: decks start with a reusable status-and-playback shell, including previous, next, home, and fullscreen controls.
-- Cover and closing pages: templates now include generated visual assets and light breathing/floating motion rules for key stage pages.
-- Profile and system-map pages: reusable templates now cover person-as-proof intros and inspectable full-system canvases.
-- Media sequences: clicker-driven image/video playback stays inside the slide stage, with active frame labels and mp4 HTTP serving support.
-- Aesthetic review: high-visibility slides use a one-sentence design read and a composition anchor before layout work.
-- Self-hosted typography: templates load bundled WOFF2 fallbacks from the repository and no longer depend on Google Fonts.
-- Expanded audit: the existing slide audit checks readable type plus remote-font and copy/style guardrails.
-- Golden samples: README images and skill reference screenshots are regenerated from the current templates.
+- 先采访再制作：agent 默认先追问观众、目标、材料、素材、限制和页数，再开始写 HTML。
+- 导航/目录页：deck 先生成可复用的状态与播放壳，保留首页、上一页、下一页、全屏控制。
+- 封面和封底：模板已加入生成视觉资产，并沉淀关键舞台页的轻呼吸、微浮动动效规则。
+- 人物和系统图页：新增人物可信度介绍页，以及可检查的一整张系统画布页。
+- 媒体序列：支持翻页键驱动图片/视频原位播放、当前标签高亮，以及 mp4 HTTP 服务。
+- 审美判断：高可见度页面先写一句设计读法，再选择构图锚点和模板。
+- 本地字体：模板从仓库内置 WOFF2 fallback 加载字体，不再依赖 Google Fonts。
+- 扩展审计：沿用现有 slide 审计，增加远程字体和文案/风格护栏检查。
+- 最新样张：README 图片和 skill 内的 golden 截图都从当前 HTML/CSS 模板重新生成。
 
-## What It Is For
+## 用途
 
-Use SoulSlide when you want an AI coding agent to:
+当你希望 AI coding agent 做这些事时，可以使用 SoulSlide：
 
-- create a new HTML slide or deck section in a recognizable editorial style
-- redesign rough slide content into a clean projector-ready page
-- choose the right layout template before writing CSS
-- improve profile, system-map, cover, closing, and key visual pages with explicit composition anchors
-- keep title, body, quote, citation, and metadata hierarchy consistent
-- generate or request real visual assets where a template requires them
-- show multiple images or videos in sequence using presenter keys, without default enlargement
-- improve cover, closing, and key visual pages with explicit art direction and light motion rules
-- render consistently with bundled local WOFF2 font fallbacks instead of remote font links
-- validate font size, image rhythm, clicker behavior, and 16:9 screenshot quality
+- 创建新的 HTML 单页 slide 或 deck 章节
+- 把粗糙内容重排成可直接投影的演示页
+- 在写 CSS 之前先选择合适的布局模板
+- 用明确构图锚点处理人物、系统图、封面、封底和关键视觉页
+- 保持标题、正文、引用、来源和元信息的字体层级一致
+- 在模板需要真实视觉资产时，生成或请求合适的图片
+- 用翻页键顺序播放多张图片或视频，默认不放大媒体
+- 用明确的美术方向和轻动效规则提升封面、封底和关键视觉页
+- 通过仓库内置 WOFF2 字体 fallback 保持离线和跨机器渲染一致，不依赖远程字体链接
+- 校验字号、图片节奏、翻页笔交互和 16:9 截图质量
 
-SoulSlide is not a generic PPT theme. It is a compact production grammar for HTML slides that should look like they came from the same deck family.
+SoulSlide 不是通用 PPT 主题，而是一套紧凑的 HTML slide 生产语法。它的目标是让不同页面看起来属于同一个 deck 家族。
 
-## Best Prompting Pattern
+## 最佳提示词
 
-For best results, ask the agent to plan the deck before it writes HTML.
-If your inputs are incomplete, SoulSlide should interview you first, ask for missing details and local file paths, then return the confirmation table before development starts.
-
-```text
-Use SoulSlide. First create a page-by-page outline and recommended layout plan. Do not write HTML yet.
-
-Audience:
-Presentation goal:
-Total pages or time:
-Tone:
-Materials I already have, with file paths if local:
-Assets I can share, with file paths if local:
-Must-include points:
-Must-avoid points:
-
-Return a table with: page number, one-sentence thesis, recommended SoulSlide template, content blocks, visual asset need, interaction need, development status, open questions.
-```
-
-After you approve the outline:
+想把这个 skill 用好，最好先让 agent 规划整套 deck，不要一上来就写 HTML。
+如果你的输入不完整，SoulSlide 应该默认先采访你，追问缺失信息和本地文件路径，然后返回确认表，确认后再开始开发。
 
 ```text
-Use SoulSlide to build pages [range] from the approved outline.
-Generate the navigation/index page first and wait for confirmation before building the rest.
-Follow the recommended template for each page.
-Keep one thesis per page.
-Use supplied assets where available.
-Generate required visuals if the template needs them and no safe asset is supplied.
-Keep previous, next, and fullscreen controls in the deck shell.
-Validate each page with a 16:9 screenshot.
+使用 SoulSlide。先基于下面材料生成逐页提纲和推荐排版方案。先不要写 HTML。
+
+观众是谁：
+演讲目标：
+总页数或演讲时长：
+语气风格：
+已有材料，如有本地文件请给出路径：
+可提供的图片/截图/素材，如有本地文件请给出路径：
+必须包含的点：
+必须避免的点：
+
+请返回一个表格：页码、这一页的一句话主旨、推荐 SoulSlide 模板、内容模块、是否需要视觉资产、是否需要交互、开发状态、待确认问题。
 ```
 
-For customer alignment, agree on this table before production:
+确认提纲后，再让 agent 开始制作：
 
-| Page | Thesis | Recommended template | Content blocks | Visual asset | Interaction | Status | Open question |
+```text
+使用 SoulSlide 按已确认提纲制作第 [范围] 页。
+先生成导航/目录页，等我确认后再继续制作其他页面。
+每页遵循推荐模板。
+每页只保留一个主旨。
+优先使用我提供的素材。
+如果模板必须有视觉资产但没有安全素材，请生成所需图片。
+保留上一页、下一页、全屏控制栏。
+每页完成后用 16:9 截图检查。
+```
+
+和客户对齐时，建议先确认这张表，再进入制作：
+
+| 页码 | 一句话主旨 | 推荐模板 | 内容模块 | 视觉资产 | 交互 | 状态 | 待确认问题 |
 |---|---|---|---|---|---|---|---|
-| 00 | How the audience navigates the deck and sees progress | `navigation.html` | tabs, sections, page cards, player controls | not needed | home/prev/next/fullscreen | generate first | confirm page grouping |
-| 01 | What the audience should remember | `cover.html` | title, subtitle, speaker/event | optional background | none | planned | confirm title |
-| 02 | One claim, comparison, process, or proof point | template name | 3-5 blocks max | supplied/generated/not needed | none/clicker | planned | missing data |
+| 00 | 观众如何导航，并看到开发进度 | `navigation.html` | 顶部 tab、章节、页面卡片、播放控制栏 | 不需要 | 回首页/上一页/下一页/全屏 | 先生成 | 确认页面分组 |
+| 01 | 观众应该记住什么 | `cover.html` | 标题、副标题、讲者/活动 | 可选背景图 | 无 | 计划中 | 确认标题 |
+| 02 | 一个判断、对比、流程或证据点 | 模板名 | 最多 3-5 个模块 | 已提供/需生成/不需要 | 无/翻页笔 | 计划中 | 缺什么材料 |
 
-## Template Gallery
+## 模板图库
 
-The skill includes desensitized golden samples. These are the visual target for agents when adapting templates, and are regenerated from the current HTML/CSS templates.
+skill 内置脱敏 golden 样张。agent 改写模板时，应把这些样张作为视觉目标；这些样张从当前 HTML/CSS 模板重新生成。
 
-![SoulSlide golden sample grid](assets/readme/golden-grid.png)
+![SoulSlide 样张拼图](assets/readme/golden-grid.png)
 
-Core template families:
+核心模板类型：
 
-- `cover.html` — opening page, chapter opener, title-led stage
-- `closing.html` — final page or closing call-to-action
-- `navigation.html` — deck index, lightweight development status, playback entry, bottom-left controls
-- `profile-intro.html` — person, speaker, owner, or role page where identity is proof
-- `media-essay.html` — one large image, video still, or artifact carries the argument
-- `quote-thesis.html` — one strong judgment or turning-point statement
-- `three-column.html` — conditions, benefits, requirements, comparisons
-- `image-grid.html` — image-led evidence cards with consistent crop rhythm
-- `metric-timeline.html` — numbers, trend proof, timeline, adoption signal
-- `workflow.html` — pipeline, routine, handoff, operating process
-- `full-system-map.html` — architecture, operating model, product map, or system canvas
-- `matrix-map.html` — quadrants, gates, layers, walls, decision maps
-- `category-overview.html` — project families, capability categories, section overview
-- `case-study.html` — product, project, automation, or skill proof page
-- `scenario-matrix.html` — dense business scene map or portfolio matrix
-- `interaction-sequence.html` — clicker-first gallery, demo reveal, before/after sequence
-- media/video sequences use the same `interaction-sequence.html` template with active labels and HTTP-served mp4 assets
+- `cover.html`：封面、章节开场、标题主导的舞台页
+- `closing.html`：封底、结束页、最终行动号召
+- `navigation.html`：deck 目录、轻量开发状态、播放入口、左下角控制栏
+- `profile-intro.html`：人物、讲者、owner 或角色介绍，身份本身是论证的一部分
+- `media-essay.html`：一张大图、视频帧或 artifact 承担核心论点
+- `quote-thesis.html`：强观点、关键转折、判断句
+- `three-column.html`：条件、收益、要求、对比
+- `image-grid.html`：图文证据卡片，强调统一裁切节奏
+- `metric-timeline.html`：数字、趋势证据、时间线、采用信号
+- `workflow.html`：流程、日常例程、交接、操作路径
+- `full-system-map.html`：架构、运转模型、产品地图或系统画布
+- `matrix-map.html`：四象限、门槛、层级、墙、决策地图
+- `category-overview.html`：项目族、能力分类、章节总览
+- `case-study.html`：产品、项目、自动化或 skill 案例页
+- `scenario-matrix.html`：密集业务场景地图或组合矩阵
+- `interaction-sequence.html`：翻页笔优先的图库、demo 展示、前后对比序列
+- 图片/视频序列也使用 `interaction-sequence.html`，保留当前标签高亮和 HTTP mp4 资源
 
-## Architecture
+## 架构
 
 ```text
 .
-├── .agents/skills/soulslide/          # Codex installable skill
-│   ├── SKILL.md                       # trigger rules and compact workflow
-│   ├── agents/openai.yaml             # Codex UI metadata
+├── .agents/skills/soulslide/          # Codex 可安装 skill
+│   ├── SKILL.md                       # 触发规则和核心流程
+│   ├── agents/openai.yaml             # Codex UI 元信息
 │   ├── assets/
-│   │   ├── soulslide.css              # shared design variables and primitives
-│   │   ├── fonts/                     # bundled WOFF2 fallback fonts and licenses
-│   │   ├── images/                    # generated cover and closing visuals
-│   │   ├── templates/*.html           # reusable slide templates
-│   │   └── golden/*.png               # desensitized reference screenshots
+│   │   ├── soulslide.css              # 共享设计变量和组件原语
+│   │   ├── fonts/                     # 内置 WOFF2 fallback 字体和许可证
+│   │   ├── images/                    # 生成的封面和封底视觉资产
+│   │   ├── templates/*.html           # 可复用 slide 模板
+│   │   └── golden/*.png               # 脱敏参考截图
 │   ├── references/
-│   │   ├── aesthetic-review.md       # design read, composition anchors, copy taste guardrails
-│   │   ├── art-direction.md           # cover, closing, key image, and motion rules
-│   │   ├── briefing.md                # prompt and customer brief patterns
-│   │   ├── deck-shell.md              # navigation/index page and controls
-│   │   ├── navigation-style.md        # fixed index/player shell visual reference
-│   │   ├── design-system.md           # visual language and typography rules
-│   │   ├── layout-patterns.md         # template catalog
-│   │   ├── media-sequence.md          # clicker-driven image/video sequence rules
-│   │   ├── template-decision-tree.md  # layout selection rules
-│   │   ├── golden-examples.md         # sample-to-template mapping
-│   │   ├── visual-assets.md           # image generation and asset rules
-│   │   ├── quality-gate.md            # lightweight slide audit checklist
-│   │   └── validation.md              # font and screenshot checks
+│   │   ├── aesthetic-review.md       # 设计读法、构图锚点和文案审美护栏
+│   │   ├── art-direction.md           # 封面、封底、关键图片和动效规则
+│   │   ├── briefing.md                # 提示词和客户 brief 模板
+│   │   ├── deck-shell.md              # 导航/目录页和控制栏
+│   │   ├── navigation-style.md        # 固定目录/播放器壳视觉参考
+│   │   ├── design-system.md           # 视觉语言和字体规则
+│   │   ├── layout-patterns.md         # 模板目录
+│   │   ├── media-sequence.md          # 图片/视频序列、标签高亮和 mp4 服务规则
+│   │   ├── template-decision-tree.md  # 模板选择规则
+│   │   ├── golden-examples.md         # 样张和模板映射
+│   │   ├── visual-assets.md           # 生图和视觉资产规则
+│   │   ├── quality-gate.md            # 轻量 slide 审计清单
+│   │   └── validation.md              # 字号和截图校验
 │   └── scripts/
-│       ├── slide-font-audit.mjs       # readable type + lightweight quality audit
-│       └── serve-media.mjs            # local HTTP media server with mp4 Range support
-├── .claude/skills/soulslide/          # Claude-compatible copy
-├── scripts/sync-claude-skill.mjs      # refreshes Claude copy from Codex source
-├── assets/readme/                     # README hero and gallery images
-└── examples/                          # local example outputs
+│       ├── slide-font-audit.mjs       # 可读字号 + 轻量质量审计脚本
+│       └── serve-media.mjs            # 支持 mp4 Range 的本地 HTTP 媒体服务
+├── .claude/skills/soulslide/          # Claude 兼容副本
+├── scripts/sync-claude-skill.mjs      # 从 Codex 源同步 Claude 副本
+├── assets/readme/                     # README 主图和样张图
+└── examples/                          # 本地示例输出
 ```
 
-## Installation
+## 安装
 
-Clone or download this repository, then install the provider directory you need.
+克隆或下载本仓库，然后安装你需要的 provider 目录。
 
-Codex:
+Codex：
 
 ```bash
 mkdir -p ~/.agents/skills
 cp -R .agents/skills/soulslide ~/.agents/skills/soulslide
 ```
 
-Claude:
+Claude：
 
 ```bash
 mkdir -p ~/.claude/skills
 cp -R .claude/skills/soulslide ~/.claude/skills/soulslide
 ```
 
-Install both if you want the same slide style available in both agents.
+如果希望 Codex 和 Claude 都使用同一套 slide 风格，可以两边都安装。
 
-## Included Guidance
+## 内置参考
 
-- `references/design-system.md` — typography, palette, spacing, and anti-patterns
-- `references/aesthetic-review.md` — design read, composition anchors, copy taste, and image-generation reminders
-- `references/art-direction.md` — cover, closing, key visual, image generation, and motion rules
-- `references/briefing.md` — prompt patterns and page-by-page customer brief structure
-- `references/deck-shell.md` — navigation/index page and playback control rules
-- `references/navigation-style.md` — fixed visual reference for the deck index/player shell
-- `references/layout-patterns.md` — categorized template grammar
-- `references/media-sequence.md` — image/video sequence behavior, active labels, and mp4 serving
-- `references/template-decision-tree.md` — direct template selection rules
-- `references/template-coverage-notes.md` — high-flavor patterns not yet promoted to core templates
-- `references/visual-assets.md` — when to use supplied assets, generated images, or no image
-- `references/quality-gate.md` — style, hierarchy, layout, media, interaction, and shareability audit
-- `references/validation.md` — font audit, screenshot check, interaction check, and HTTP asset check
+- `references/design-system.md`：字体、配色、间距和反模式
+- `references/aesthetic-review.md`：设计读法、构图锚点、文案审美和生图提醒
+- `references/art-direction.md`：封面、封底、关键视觉页、生图和动效规则
+- `references/briefing.md`：提示词模板和逐页客户 brief 结构
+- `references/deck-shell.md`：导航/目录页和播放控制栏规则
+- `references/navigation-style.md`：deck 目录/播放器壳的固定视觉参考
+- `references/layout-patterns.md`：模板语法分类
+- `references/media-sequence.md`：图片/视频序列行为、当前标签和 mp4 服务
+- `references/template-decision-tree.md`：直接的模板选择规则
+- `references/template-coverage-notes.md`：有风味但尚未升为核心模板的页型
+- `references/visual-assets.md`：何时使用已有资产、生成图片或不配图
+- `references/quality-gate.md`：风格、层级、布局、媒体、交互和可分享性审计
+- `references/validation.md`：字号审计、截图检查、交互检查和 HTTP 资源检查
 
-## License
+## 协议
 
-SoulSlide is released under the [MIT License](LICENSE).
+SoulSlide 采用 [MIT License](LICENSE) 发布。
 
-The templates intentionally use safe placeholder content. They preserve style and layout grammar without copying private source-deck content or non-shareable assets.
+模板内容刻意使用安全占位。它们保留风格和布局语法，但不复制私有源 deck 内容或不可分享资产。
