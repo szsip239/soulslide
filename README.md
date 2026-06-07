@@ -144,10 +144,6 @@ Install both if you want the same slide style available in both agents.
 
 ## License
 
-SoulSlide is source-available under the [PolyForm Noncommercial License 1.0.0](LICENSE).
-
-Personal noncommercial use is free. Commercial use is not permitted without separate written permission from the copyright holders.
-
-Because this license restricts commercial use, SoulSlide is not OSI-approved open source.
+SoulSlide is released under the [MIT License](LICENSE).
 
 The templates intentionally use safe placeholder content. They preserve style and layout grammar without copying private source-deck content or non-shareable assets.
