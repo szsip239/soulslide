@@ -8,6 +8,7 @@ This catalog distills reusable editorial slide layout grammar. Use it to pick a 
 |---|---|---|
 | Cover Stage | `assets/templates/cover.html` | Opening page, talk title, big thesis, speaker/event metadata |
 | Closing Signature | `assets/templates/closing.html` | Final page, call-to-action, memorable closing line |
+| Navigation Status | `assets/templates/navigation.html` | Deck index, development status, presentation controls |
 | Quote Thesis | `assets/templates/quote-thesis.html` | One strong argument, turning point, field note, or quote-led claim |
 | Three Column | `assets/templates/three-column.html` | Requirements, benefits, principles, comparisons, signup pages |
 | Image Grid | `assets/templates/image-grid.html` | 4-6 ideas with visual evidence and citations |
@@ -60,6 +61,27 @@ Use for:
 
 - Final slide.
 - Section landing after a complex narrative.
+
+## 2.5 Navigation Status
+
+Use this for the first generated page of a full deck after the page plan is confirmed.
+
+Structure:
+
+- Left panel explains deck purpose and current build state.
+- Right list maps sections/pages to templates and statuses.
+- Floating control bar exposes previous, next, and fullscreen actions.
+
+Use for:
+
+- Deck index.
+- Development progress dashboard.
+- Presentation entry point.
+
+Avoid:
+
+- Treating it as a decorative title page.
+- Removing the control bar after content pages are built.
 
 ## 3. Three Column
 

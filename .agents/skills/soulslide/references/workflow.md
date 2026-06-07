@@ -3,9 +3,11 @@
 ## Before Writing HTML
 
 1. Identify the slide's one-sentence thesis.
-2. Decide whether the slide is opening, closing, explanation, proof, map, process, or case.
-3. Pick a template from `layout-patterns.md`.
-4. Decide the information hierarchy before filling content.
+2. For a deck or unclear request, interview the user for missing audience, goal, materials, asset paths, constraints, and length.
+3. Return a page-by-page outline table with recommended templates and open questions; wait for confirmation before development.
+4. Decide whether each slide is navigation, opening, closing, explanation, proof, map, process, or case.
+5. Pick a template from `layout-patterns.md`.
+6. Decide the information hierarchy before filling content.
 
 ## Content Compression
 
@@ -19,17 +21,19 @@ SoulSlide works best when the slide feels edited.
 
 ## Build Steps
 
-1. Copy the chosen template.
-2. Update title, page number, section label, and footer.
-3. Replace placeholder content.
-4. Keep existing CSS class names unless a new layout truly needs a new primitive.
-5. Add page-specific CSS only after checking whether `soulslide.css` already has the component.
-6. Run the font audit script.
-7. Screenshot the slide at 16:9 and inspect visually.
+1. For a full deck, create `navigation.html` first and ask the user to confirm it before building content pages.
+2. Copy the chosen template.
+3. Update title, page number, section label, and footer.
+4. Replace placeholder content.
+5. Preserve the deck navigation/status page and previous/next/fullscreen controls.
+6. Keep existing CSS class names unless a new layout truly needs a new primitive.
+7. Add page-specific CSS only after checking whether `soulslide.css` already has the component.
+8. Run the font audit script.
+9. Screenshot the slide at 16:9 and inspect visually.
 
 ## Adapting an Existing Slide
 
-1. Preserve working interaction and navigation code.
+1. Preserve working interaction and navigation code, including the deck navigation/status page and previous/next/fullscreen control bar.
 2. Read the existing page's structural classes before editing.
 3. Do not normalize every page to the same template; preserve the page's narrative role.
 4. Improve hierarchy first: title > module title > body > metadata.
@@ -38,7 +42,8 @@ SoulSlide works best when the slide feels edited.
 ## Deck-Level Consistency
 
 - Use the same shell and footer language across related pages.
+- Keep the navigation/status page style stable after the user confirms it.
+- Keep previous/next/fullscreen controls available during playback.
 - Keep page numbers in Playfair Display.
 - Use one accent color family; red/blue/green are secondary semantic accents, not new themes.
 - Do not make every page a grid. Alternate dense pages with editorial breathing pages.
-

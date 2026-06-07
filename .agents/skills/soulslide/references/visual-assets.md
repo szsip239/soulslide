@@ -14,6 +14,7 @@ Use this reference when a slide needs a bitmap image, generated illustration, sc
 |---|---|---|
 | `cover.html` | Optional | Use a 16:9 immersive background only when it makes the topic more concrete. Keep enough quiet area for the title. |
 | `closing.html` | Usually none | Keep it typographic unless the closing depends on a specific object, place, or artifact. |
+| `navigation.html` | Usually none | Use structured status rows and controls; do not add decorative art. |
 | `quote-thesis.html` | Usually none | Do not add decorative images. Use a visual only when the claim is about a tangible scene or artifact. |
 | `three-column.html` | Usually none | Prefer text hierarchy and accent rules. Small icons are optional, but avoid generic clip-art. |
 | `image-grid.html` | Required | Use 4-6 related images with the same crop rhythm and visual language. Generate a coherent set when no safe assets exist. |

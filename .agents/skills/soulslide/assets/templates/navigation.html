@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>00 · Navigation Status</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500;700&family=Noto+Sans+SC:wght@300;400;500;700;900&family=Noto+Serif+SC:wght@500;700;900&family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../soulslide.css">
+</head>
+<body class="ss-doc">
+<main class="ss-slide">
+  <header class="ss-head"><div class="ss-brand">SoulSlide template</div><div class="ss-topic">navigation status</div><div class="ss-page">00 / 10</div></header>
+  <section class="ss-title-row">
+    <div class="ss-title-num">00</div>
+    <h1 class="ss-title-main">导航页：先确认 <span class="ss-mark">整套演讲的结构</span></h1>
+    <div class="ss-kicker">这是开发状态页，也是播放入口。先确认它，再继续做内容页。</div>
+  </section>
+  <section class="ss-main ss-nav-layout">
+    <section class="ss-panel dark ss-nav-summary">
+      <div>
+        <div class="ss-eyebrow">deck shell</div>
+        <div class="ss-big-quote">把用户想法先变成可确认的页面地图，再逐页开发。</div>
+      </div>
+      <div class="ss-nav-meta">
+        <div class="ss-nav-meta-row"><span>Audience</span><b>客户 / 团队 / 评审</b></div>
+        <div class="ss-nav-meta-row"><span>Goal</span><b>形成共识并推动行动</b></div>
+        <div class="ss-nav-meta-row"><span>Status</span><b>outline confirmed</b></div>
+      </div>
+    </section>
+    <section class="ss-nav-list">
+      <a class="ss-nav-entry current" href="slide_01.html"><span class="ss-nav-index">01</span><div><h3>开场与核心判断</h3><p>cover.html · 标题、副标题、场景承诺</p></div><span class="ss-nav-status final">final</span></a>
+      <a class="ss-nav-entry" href="slide_02.html"><span class="ss-nav-index">02</span><div><h3>问题与机会</h3><p>quote-thesis.html · 一个强判断加三条支撑</p></div><span class="ss-nav-status draft">draft</span></a>
+      <a class="ss-nav-entry" href="slide_03.html"><span class="ss-nav-index">03</span><div><h3>方案路径</h3><p>workflow.html · 输入、执行、验收、沉淀</p></div><span class="ss-nav-status review">review</span></a>
+      <a class="ss-nav-entry" href="slide_04.html"><span class="ss-nav-index">04</span><div><h3>案例证明</h3><p>case-study.html · 左边证据，右边能力栈</p></div><span class="ss-nav-status">planned</span></a>
+      <a class="ss-nav-entry" href="slide_05.html"><span class="ss-nav-index">05</span><div><h3>结束与行动</h3><p>closing.html · 最终一句话和下一步</p></div><span class="ss-nav-status">planned</span></a>
+    </section>
+  </section>
+  <footer class="ss-foot"><span>Navigation status</span><span class="ss-line">Confirm the map before building the deck.</span><span>00</span></footer>
+</main>
+<nav class="ss-deck-controls" aria-label="Slide controls">
+  <button type="button" data-ss-prev title="Previous slide">上一页</button>
+  <button type="button" data-ss-next title="Next slide">下一页</button>
+  <button type="button" data-ss-fullscreen title="Toggle fullscreen">全屏</button>
+</nav>
+<script>
+(() => {
+  const pages = ['navigation.html', 'slide_01.html', 'slide_02.html', 'slide_03.html', 'slide_04.html', 'slide_05.html'];
+  const currentName = location.pathname.split('/').pop() || 'navigation.html';
+  function currentIndex() {
+    const index = pages.indexOf(currentName);
+    return index >= 0 ? index : 0;
+  }
+  function go(delta) {
+    const next = pages[Math.max(0, Math.min(pages.length - 1, currentIndex() + delta))];
+    if (next && next !== currentName) location.href = next;
+  }
+  async function toggleFullscreen() {
+    if (!document.fullscreenElement) {
+      await document.documentElement.requestFullscreen?.();
+    } else {
+      await document.exitFullscreen?.();
+    }
+  }
+  window.__soulslideDeck = { go, toggleFullscreen };
+  document.querySelector('[data-ss-prev]').addEventListener('click', () => go(-1));
+  document.querySelector('[data-ss-next]').addEventListener('click', () => go(1));
+  document.querySelector('[data-ss-fullscreen]').addEventListener('click', toggleFullscreen);
+  window.addEventListener('keydown', (event) => {
+    if (typeof window.__seqHandleNav === 'function' && window.__seqHandleNav(event.key)) {
+      event.preventDefault();
+      return;
+    }
+    if (window.__seqBlockNav) return;
+    if (event.key === 'ArrowRight' || event.key === 'PageDown' || event.key === ' ') { event.preventDefault(); go(1); }
+    if (event.key === 'ArrowLeft' || event.key === 'PageUp') { event.preventDefault(); go(-1); }
+  }, true);
+})();
+</script>
+</body>
+</html>

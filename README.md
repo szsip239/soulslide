@@ -22,6 +22,7 @@ SoulSlide is not a generic PPT theme. It is a compact production grammar for HTM
 ## Best Prompting Pattern
 
 For best results, ask the agent to plan the deck before it writes HTML.
+If your inputs are incomplete, SoulSlide should interview you first, ask for missing details and local file paths, then return the confirmation table before development starts.
 
 ```text
 Use SoulSlide. First create a page-by-page outline and recommended layout plan. Do not write HTML yet.
@@ -30,31 +31,34 @@ Audience:
 Presentation goal:
 Total pages or time:
 Tone:
-Materials I already have:
-Assets I can share:
+Materials I already have, with file paths if local:
+Assets I can share, with file paths if local:
 Must-include points:
 Must-avoid points:
 
-Return a table with: page number, one-sentence thesis, recommended SoulSlide template, content blocks, visual asset need, interaction need, open questions.
+Return a table with: page number, one-sentence thesis, recommended SoulSlide template, content blocks, visual asset need, interaction need, development status, open questions.
 ```
 
 After you approve the outline:
 
 ```text
 Use SoulSlide to build pages [range] from the approved outline.
+Generate the navigation/status page first and wait for confirmation before building the rest.
 Follow the recommended template for each page.
 Keep one thesis per page.
 Use supplied assets where available.
 Generate required visuals if the template needs them and no safe asset is supplied.
+Keep previous, next, and fullscreen controls in the deck shell.
 Validate each page with a 16:9 screenshot.
 ```
 
 For customer alignment, agree on this table before production:
 
-| Page | Thesis | Recommended template | Content blocks | Visual asset | Interaction | Open question |
-|---|---|---|---|---|---|---|
-| 01 | What the audience should remember | `cover.html` | title, subtitle, speaker/event | optional background | none | confirm title |
-| 02 | One claim, comparison, process, or proof point | template name | 3-5 blocks max | supplied/generated/not needed | none/clicker | missing data |
+| Page | Thesis | Recommended template | Content blocks | Visual asset | Interaction | Status | Open question |
+|---|---|---|---|---|---|---|---|
+| 00 | How the audience navigates the deck and sees progress | `navigation.html` | section list, page status, controls | not needed | prev/next/fullscreen | generate first | confirm page grouping |
+| 01 | What the audience should remember | `cover.html` | title, subtitle, speaker/event | optional background | none | planned | confirm title |
+| 02 | One claim, comparison, process, or proof point | template name | 3-5 blocks max | supplied/generated/not needed | none/clicker | planned | missing data |
 
 ## Template Gallery
 
@@ -66,6 +70,7 @@ Core template families:
 
 - `cover.html` — opening page, chapter opener, title-led stage
 - `closing.html` — final page or closing call-to-action
+- `navigation.html` — deck index, development status page, playback controls
 - `quote-thesis.html` — one strong judgment or turning-point statement
 - `three-column.html` — conditions, benefits, requirements, comparisons
 - `image-grid.html` — image-led evidence cards with consistent crop rhythm
@@ -89,7 +94,8 @@ Core template families:
 │   │   ├── templates/*.html           # reusable slide templates
 │   │   └── golden/*.png               # desensitized reference screenshots
 │   ├── references/
-│   │   ├── briefing.md               # prompt and customer brief patterns
+│   │   ├── briefing.md                # prompt and customer brief patterns
+│   │   ├── deck-shell.md              # navigation/status page and controls
 │   │   ├── design-system.md           # visual language and typography rules
 │   │   ├── layout-patterns.md         # template catalog
 │   │   ├── template-decision-tree.md  # layout selection rules
@@ -128,6 +134,7 @@ Install both if you want the same slide style available in both agents.
 
 - `references/design-system.md` — typography, palette, spacing, and anti-patterns
 - `references/briefing.md` — prompt patterns and page-by-page customer brief structure
+- `references/deck-shell.md` — navigation/status page and playback control rules
 - `references/layout-patterns.md` — categorized template grammar
 - `references/template-decision-tree.md` — direct template selection rules
 - `references/template-coverage-notes.md` — high-flavor patterns not yet promoted to core templates

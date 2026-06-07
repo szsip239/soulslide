@@ -48,6 +48,12 @@ Check:
 
 ## Interaction Check
 
+For full decks:
+
+- Navigation/status page is present and visually matches the deck.
+- Previous, next, and fullscreen controls remain visible and clickable.
+- ArrowRight/PageDown/Space goes next; ArrowLeft/PageUp goes previous.
+
 For sequence slides:
 
 - ArrowRight/PageDown/Space advances the sequence first.

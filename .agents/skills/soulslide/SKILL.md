@@ -10,18 +10,22 @@ SoulSlide creates editorial HTML slides: projector-first, warm paper palette, st
 ## Core Workflow
 
 1. Identify the deliverable: a single slide, a deck section, a cover, a closing page, or a style audit.
-2. For a deck, section, or unclear request, read `references/briefing.md` and produce a page-by-page outline with recommended templates before writing HTML.
-3. Read `references/design-system.md` before visual work.
-4. Pick the closest layout using `references/template-decision-tree.md`; copy or adapt the matching file from `assets/templates/`. If the request does not fit any leaf cleanly, check `references/template-coverage-notes.md` before inventing a new structure.
-5. If the selected template has required or useful bitmap assets, read `references/visual-assets.md`. Codex must call `image2` or the active image generation tool for missing required visuals instead of leaving final text placeholders.
-6. Link `assets/soulslide.css` or copy its relevant variables/components into the target project.
-7. Write content for one clear idea per slide. Preserve hierarchy: page title > module title > body > source/metadata.
-8. Apply `references/quality-gate.md`, then run `scripts/slide-font-audit.mjs` on changed slides. Use a 16:9 browser screenshot to verify no overflow, clipped text, broken images, or overlapping elements.
+2. For a deck, section, or unclear request, read `references/briefing.md`. Interview the user for missing audience, goal, materials, asset paths, constraints, and page-count inputs before planning.
+3. Return a page-by-page outline table with recommended templates and open questions. Do not start HTML until the user confirms the table, unless they explicitly ask to proceed with assumptions.
+4. After confirmation, read `references/deck-shell.md` and generate the navigation/status page first from `assets/templates/navigation.html`; ask the user to confirm that page before building the rest of the deck.
+5. Read `references/design-system.md` before visual work.
+6. Pick the closest layout using `references/template-decision-tree.md`; copy or adapt the matching file from `assets/templates/`. If the request does not fit any leaf cleanly, check `references/template-coverage-notes.md` before inventing a new structure.
+7. If the selected template has required or useful bitmap assets, read `references/visual-assets.md`. Codex must call `image2` or the active image generation tool for missing required visuals instead of leaving final text placeholders.
+8. Link `assets/soulslide.css` or copy its relevant variables/components into the target project.
+9. Write content for one clear idea per slide. Preserve hierarchy: page title > module title > body > source/metadata.
+10. Preserve the deck navigation/status page and the previous/next/fullscreen control bar across presentation pages.
+11. Apply `references/quality-gate.md`, then run `scripts/slide-font-audit.mjs` on changed slides. Use a 16:9 browser screenshot to verify no overflow, clipped text, broken images, or overlapping elements.
 
 ## Template Selection
 
 - Cover or opening thesis: `cover.html` (optional immersive visual)
 - Closing or final call-to-action: `closing.html`
+- Deck navigation/status page: `navigation.html`
 - One strong argument or turning-point statement: `quote-thesis.html`
 - Three columns, requirements, comparisons, principles: `three-column.html`
 - Image-led insight cards with citations: `image-grid.html` (required visual evidence)
@@ -43,6 +47,7 @@ SoulSlide creates editorial HTML slides: projector-first, warm paper palette, st
 - Do not leave final `image`, `screenshot`, `product shot`, or `visual` text placeholders in slots that require an actual asset.
 - Do not ship a slide that fails the lightweight quality gate in `references/quality-gate.md`.
 - Do not make key presentation steps mouse-only. Important interactions must work with keyboard or presenter clicker.
+- Do not remove the deck navigation page or previous/next/fullscreen controls when working on a complete presentation.
 
 ## Validation
 
