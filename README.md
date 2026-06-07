@@ -6,6 +6,14 @@
 
 SoulSlide is an agent skill for creating editorial HTML presentation slides with a consistent visual language: projector-first 16:9 composition, warm paper palette, strong Chinese typography, restrained cards, and reusable slide templates for Codex and Claude.
 
+## Current Highlights
+
+- Interview-first workflow: the agent should gather audience, goal, materials, assets, constraints, and page count before writing HTML.
+- Navigation/index page: decks start with a reusable status-and-playback shell, including previous, next, home, and fullscreen controls.
+- Cover and closing pages: templates now include generated visual assets and light breathing/floating motion rules for key stage pages.
+- Self-hosted typography: templates load bundled WOFF2 fallbacks from the repository and no longer depend on Google Fonts.
+- Golden samples: README images and skill reference screenshots are regenerated from the current templates.
+
 ## What It Is For
 
 Use SoulSlide when you want an AI coding agent to:
@@ -64,7 +72,7 @@ For customer alignment, agree on this table before production:
 
 ## Template Gallery
 
-The skill includes desensitized golden samples. These are the visual target for agents when adapting templates.
+The skill includes desensitized golden samples. These are the visual target for agents when adapting templates, and are regenerated from the current HTML/CSS templates.
 
 ![SoulSlide golden sample grid](assets/readme/golden-grid.png)
 
@@ -95,6 +103,7 @@ Core template families:
 │   ├── assets/
 │   │   ├── soulslide.css              # shared design variables and primitives
 │   │   ├── fonts/                     # bundled WOFF2 fallback fonts and licenses
+│   │   ├── images/                    # generated cover and closing visuals
 │   │   ├── templates/*.html           # reusable slide templates
 │   │   └── golden/*.png               # desensitized reference screenshots
 │   ├── references/
