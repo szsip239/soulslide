@@ -8,11 +8,13 @@ This catalog distills reusable editorial slide layout grammar. Use it to pick a 
 |---|---|---|
 | Cover Stage | `assets/templates/cover.html` | Opening page, talk title, big thesis, speaker/event metadata |
 | Closing Signature | `assets/templates/closing.html` | Final page, call-to-action, memorable closing line |
+| Quote Thesis | `assets/templates/quote-thesis.html` | One strong argument, turning point, field note, or quote-led claim |
 | Three Column | `assets/templates/three-column.html` | Requirements, benefits, principles, comparisons, signup pages |
 | Image Grid | `assets/templates/image-grid.html` | 4-6 ideas with visual evidence and citations |
 | Metric Timeline | `assets/templates/metric-timeline.html` | Market signal, proof points, timeline, release history |
 | Workflow | `assets/templates/workflow.html` | Daily process, pipeline, handoff, step-by-step operations |
 | Matrix Map | `assets/templates/matrix-map.html` | Quadrants, layers, gates, walls, decision maps |
+| Category Overview | `assets/templates/category-overview.html` | Project families, capability categories, practice maps, section overview |
 | Case Study | `assets/templates/case-study.html` | Product/project page with screenshot, capabilities, build path |
 | Scenario Matrix | `assets/templates/scenario-matrix.html` | Enterprise scene map, sector/function matrix, portfolio overview |
 | Interaction Sequence | `assets/templates/interaction-sequence.html` | Presenter-clicker sequence, gallery, demo reveal |
@@ -74,7 +76,23 @@ Use for:
 - Before / during / after.
 - People / process / platform.
 
-## 4. Image Grid
+## 4. Quote Thesis
+
+Use this for a single strong claim, quote-led slide, turning point, or field note.
+
+Structure:
+
+- One dark quote block or thesis block.
+- Three short notes or supporting claims.
+- Minimal labels and one clear footer line.
+
+Use for:
+
+- A stance before evidence.
+- A transition between sections.
+- A memorable field observation.
+
+## 5. Image Grid
 
 Use this for multi-card visual argument pages.
 
@@ -96,7 +114,7 @@ Avoid:
 - Allowing long text to squeeze image heights.
 - Making citations the same size as main body.
 
-## 5. Metric Timeline
+## 6. Metric Timeline
 
 Source inspiration: market/tool signal page with GitHub stars, release timeline, and proof points.
 
@@ -113,7 +131,7 @@ Use for:
 - Tool adoption or market momentum.
 - Data-backed narrative.
 
-## 6. Workflow
+## 7. Workflow
 
 Use this for daily process pages, operational routines, and handoff loops.
 
@@ -130,7 +148,7 @@ Use for:
 - Automation pipelines.
 - Human/AI handoff loops.
 
-## 7. Matrix Map
+## 8. Matrix Map
 
 Source inspiration: taste/professionalism quadrant, five gates, five layers, five walls.
 
@@ -147,7 +165,23 @@ Use for:
 - Bottlenecks and unlocks.
 - Strategy frameworks.
 
-## 8. Case Study
+## 9. Category Overview
+
+Use this for a portfolio, practice map, capability overview, or project family page.
+
+Structure:
+
+- Four category cards.
+- Each card has a number, English tag, Chinese title, one short body, and 1-3 project labels.
+- The page explains the taxonomy, not each project in detail.
+
+Use for:
+
+- "Here are my four practice areas."
+- "These are the capability families."
+- "This section contains these types of work."
+
+## 10. Case Study
 
 Source inspiration: TeamClaw, Skill case, product/platform pages.
 
@@ -164,7 +198,7 @@ Use for:
 - Internal case studies.
 - AI skill or automation examples.
 
-## 9. Scenario Matrix
+## 11. Scenario Matrix
 
 Source inspiration: enterprise AI full-scenario map.
 
@@ -180,7 +214,7 @@ Use for:
 - Enterprise scenario discovery.
 - Roadmap prioritization.
 
-## 10. Interaction Sequence
+## 12. Interaction Sequence
 
 Source inspiration: speaker photo gallery, TeamClaw build sequence, video reveal pages.
 
@@ -205,9 +239,11 @@ Avoid:
 ## Choosing a Pattern
 
 - If the slide answers "what are the options?", start with `three-column` or `image-grid`.
+- If the slide answers "what is the core judgment?", start with `quote-thesis`.
 - If it answers "how does it work?", start with `workflow`.
 - If it answers "why now?", start with `metric-timeline`.
 - If it answers "where are we blocked?", start with `matrix-map`.
+- If it answers "what families of work exist?", start with `category-overview`.
 - If it answers "what did we build?", start with `case-study`.
 - If it answers "what can this become across the business?", start with `scenario-matrix`.
 - If it is the first or last page, use `cover` or `closing`.

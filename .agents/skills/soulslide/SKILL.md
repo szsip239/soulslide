@@ -11,7 +11,7 @@ SoulSlide creates editorial HTML slides: projector-first, warm paper palette, st
 
 1. Identify the deliverable: a single slide, a deck section, a cover, a closing page, or a style audit.
 2. Read `references/design-system.md` before visual work.
-3. Pick the closest layout in `references/layout-patterns.md`; copy or adapt the matching file from `assets/templates/`.
+3. Pick the closest layout using `references/template-decision-tree.md`; copy or adapt the matching file from `assets/templates/`.
 4. Link `assets/soulslide.css` or copy its relevant variables/components into the target project.
 5. Write content for one clear idea per slide. Preserve hierarchy: page title > module title > body > source/metadata.
 6. Run `scripts/slide-font-audit.mjs` on changed slides. Then use a 16:9 browser screenshot to verify no overflow, clipped text, broken images, or overlapping elements.
@@ -20,11 +20,13 @@ SoulSlide creates editorial HTML slides: projector-first, warm paper palette, st
 
 - Cover or opening thesis: `cover.html`
 - Closing or final call-to-action: `closing.html`
+- One strong argument or turning-point statement: `quote-thesis.html`
 - Three columns, requirements, comparisons, principles: `three-column.html`
 - Image-led insight cards with citations: `image-grid.html`
 - Big metric, market signal, timeline, proof points: `metric-timeline.html`
 - Process, daily routine, handoff, pipeline: `workflow.html`
 - Quadrant, map, layers, gates, walls: `matrix-map.html`
+- Portfolio, project family, practice categories: `category-overview.html`
 - Product/project/case with screenshots and capabilities: `case-study.html`
 - Industry or enterprise scenario matrix: `scenario-matrix.html`
 - Forced presenter-clicker sequence or gallery: `interaction-sequence.html`

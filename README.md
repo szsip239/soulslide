@@ -14,10 +14,13 @@ Installable skill directories:
 - `SKILL.md` — trigger rules and compact workflow for agents.
 - `references/design-system.md` — SoulSlide visual language, typography, spacing, and anti-patterns.
 - `references/layout-patterns.md` — categorized layout templates for common editorial slide patterns.
+- `references/template-decision-tree.md` — direct rules for choosing the right template.
+- `references/golden-examples.md` — desensitized golden sample mapping for each decision-tree leaf.
 - `references/workflow.md` — slide creation and adaptation workflow.
 - `references/validation.md` — font audit and screenshot validation rules.
 - `assets/soulslide.css` — shared design variables and component primitives.
-- `assets/templates/*.html` — safe placeholder templates for cover, closing, cards, maps, workflows, metrics, cases, and interactive sequences.
+- `assets/templates/*.html` — safe placeholder templates for cover, closing, cards, maps, workflows, metrics, cases, category overviews, and interactive sequences.
+- `assets/golden/*.png` — generated screenshots of desensitized golden samples.
 - `scripts/slide-font-audit.mjs` — minimum readable font-size audit for slide cards and panels.
 
 ## Local Check
