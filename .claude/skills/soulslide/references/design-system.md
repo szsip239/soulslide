@@ -45,11 +45,13 @@ Recommended stack:
 - English display, page numbers, large metrics: Playfair Display.
 - English italic ornament and footer center lines: Cormorant Garamond.
 - Code, commands, URLs, compact technical labels: JetBrains Mono.
+- Templates must self-host the fallback font files from `assets/fonts/`; do not add Google Fonts links to generated slides.
+- Keep `Source Han Sans SC` local-first for machines that already have it installed. The repository packages `Noto Sans SC` as the stable fallback, not as a replacement for Source Han.
 
 Default CSS variables:
 
 ```css
---ss-font-sans-cn: "Source Han Sans SC", "Noto Sans CJK SC", "Noto Sans SC", "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+--ss-font-sans-cn: "Source Han Sans SC", "Noto Sans SC", "Noto Sans CJK SC", -apple-system, BlinkMacSystemFont, sans-serif;
 --ss-font-serif-cn: "Noto Serif SC", "Source Han Serif SC", serif;
 --ss-font-display-en: "Playfair Display", "Cormorant Garamond", serif;
 --ss-font-italic-en: "Cormorant Garamond", "Playfair Display", serif;

@@ -1,3 +1,4 @@
+@import url("./fonts/soulslide-fonts.css");
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
   --ss-bg:#FAF7F2;
@@ -13,7 +14,7 @@
   --ss-red:#B95A4E;
   --ss-blue:#315B86;
   --ss-green:#687C5F;
-  --ss-font-sans-cn:"Source Han Sans SC","Noto Sans CJK SC","Noto Sans SC","Inter",-apple-system,BlinkMacSystemFont,sans-serif;
+  --ss-font-sans-cn:"Source Han Sans SC","Noto Sans SC","Noto Sans CJK SC",-apple-system,BlinkMacSystemFont,sans-serif;
   --ss-font-serif-cn:"Noto Serif SC","Source Han Serif SC",serif;
   --ss-font-display-en:"Playfair Display","Cormorant Garamond",serif;
   --ss-font-italic-en:"Cormorant Garamond","Playfair Display",serif;

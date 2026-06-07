@@ -16,6 +16,7 @@ Use SoulSlide when you want an AI coding agent to:
 - keep title, body, quote, citation, and metadata hierarchy consistent
 - generate or request real visual assets where a template requires them
 - improve cover, closing, and key visual pages with explicit art direction and light motion rules
+- render consistently with bundled local WOFF2 font fallbacks instead of remote font links
 - validate font size, image rhythm, clicker behavior, and 16:9 screenshot quality
 
 SoulSlide is not a generic PPT theme. It is a compact production grammar for HTML slides that should look like they came from the same deck family.
@@ -93,6 +94,7 @@ Core template families:
 │   ├── agents/openai.yaml             # Codex UI metadata
 │   ├── assets/
 │   │   ├── soulslide.css              # shared design variables and primitives
+│   │   ├── fonts/                     # bundled WOFF2 fallback fonts and licenses
 │   │   ├── templates/*.html           # reusable slide templates
 │   │   └── golden/*.png               # desensitized reference screenshots
 │   ├── references/
